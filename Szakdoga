@@ -1,0 +1,2337 @@
+library(tidyverse)
+library(haven)
+library(foreign)
+elomeres1_2006 <- read_dta("2006_elomeres_1.dta")
+elomeres2_2006 <- read_dta("2006_elomeres_2.dta")
+osztaly10_2006 <- read_dta("2006_osztaly_10.dta")
+tanuloi10_2006 <- read_dta("2006_tanuloi_10.dta")
+tanuloi10_2006_mean_oszt_mat_10 <- mean(tanuloi10_2006$mean_oszt_mat_10,na.rm = TRUE)
+tanuloi10_2006_mean_oszt_mat_10
+
+tanuloi10_2006_mean_oszt_olv_10 <- mean(tanuloi10_2006$mean_oszt_olv_10,na.rm = TRUE)
+tanuloi10_2006_mean_oszt_olv_10
+
+hist(tanuloi10_2006$mean_oszt_mat_10)
+hist(tanuloi10_2006$mean_oszt_olv_10)
+
+#1.modell
+#abra1 <- lm(odometer_value~year_produced,data=Volkswagen)
+tanuloi10_2006$m_zpsc
+#tanuloi10_2006$m_zscp nem ez a matek
+m1 <-lm(m_zpsc~sex,data=tanuloi10_2006)
+summary(m1)
+
+#Tanuló hány évig járt óvodába 2006_10
+m_t_2006_10 <-lm(m_zpsc~t3,data=tanuloi10_2006)
+summary(m_t_2006_10)
+
+#Tanuló hány évig járt óvodába 2006_8
+tanuloi8_2006 <- read_dta("2006_tanuloi_8.dta")
+m_t_2006_8 <-lm(m_zpsc~t3,data=tanuloi8_2006)
+summary(m_t_2006_8)
+
+#Tanuló hány évig járt óvodába 2006_6
+tanuloi6_2006 <- read_dta("2006_tanuloi_6.dta")
+m_t_2006_6 <-lm(m_zpsc~t3,data=tanuloi6_2006)
+summary(m_t_2006_6)
+
+#Tanuló hány évig járt óvodába 2006_4
+tanuloi4_2006 <- read_dta("2006_tanuloi_4.dta")
+m_t_2006_4 <-lm(m_zpsc~t3,data=tanuloi4_2006)
+summary(m_t_2006_4)
+
+#Tanuló hány évig járt óvodába 2007_10
+tanuloi10_2007 <- read_dta("2007_tanuloi_10.dta")
+m_t_2007_10 <-lm(m_zpsc~t3,data=tanuloi10_2007)
+summary(m_t_2007_10)
+
+#Tanuló hány évig járt óvodába 2007_8
+tanuloi8_2007 <- read_dta("2007_tanuloi_8.dta")
+m_t_2007_8 <-lm(m_zpsc~t3,data=tanuloi8_2007)
+summary(m_t_2007_8)
+
+#Tanuló hány évig járt óvodába 2007_6
+tanuloi6_2007 <- read_dta("2007_tanuloi_6.dta")
+m_t_2007_6 <-lm(m_zpsc~t3,data=tanuloi6_2007)
+summary(m_t_2007_6)
+
+
+#Tanuló hány évig járt óvodába 2008_10
+tanuloi10_2008 <- read_dta("2008_tanuloi_10.dta")
+m_t_2008_10 <-lm(m_zpsc~t3,data=tanuloi10_2008)
+summary(m_t_2008_10)
+
+#Tanuló hány évig járt óvodába 2008_8
+tanuloi8_2008 <- read_dta("2008_tanuloi_8.dta")
+m_t_2008_8 <-lm(m_zpsc~t3,data=tanuloi8_2008)
+summary(m_t_2008_8)
+
+#Tanuló hány évig járt óvodába 2008_6
+tanuloi6_2008 <- read_dta("2008_tanuloi_6.dta")
+m_t_2008_6 <-lm(m_zpsc~t3,data=tanuloi6_2008)
+summary(m_t_2008_6)
+
+#2009
+#Tanuló hány évig járt óvodába 2009_10
+tanuloi10_2009 <- read_dta("2009_tanuloi_10.dta")
+m_t_2009_10 <-lm(m_zpsc~t3,data=tanuloi10_2009)
+summary(m_t_2009_10)
+
+#Tanuló hány évig járt óvodába 2009_8
+tanuloi8_2009 <- read_dta("2009_tanuloi_8.dta")
+m_t_2009_8 <-lm(m_zpsc~t3,data=tanuloi8_2009)
+summary(m_t_2009_8)
+
+#Tanuló hány évig járt óvodába 2009_6
+tanuloi6_2009 <- read_dta("2009_tanuloi_6.dta")
+m_t_2009_6 <-lm(m_zpsc~t3,data=tanuloi6_2009)
+summary(m_t_2009_6)
+
+#2010
+#Tanuló hány évig járt óvodába 2010_10
+tanuloi10_2010 <- read_dta("2010_tanuloi_10.dta")
+m_t_2010_10 <-lm(m_zpsc~t3,data=tanuloi10_2010)
+summary(m_t_2010_10)
+
+#Tanuló hány évig járt óvodába 2010_8
+tanuloi8_2010 <- read_dta("2010_tanuloi_8.dta")
+m_t_2010_8 <-lm(m_zpsc~t3,data=tanuloi8_2010)
+summary(m_t_2010_8)
+
+#Tanuló hány évig járt óvodába 2010_6
+tanuloi6_2010 <- read_dta("2010_tanuloi_6.dta")
+m_t_2010_6 <-lm(m_zpsc~t3,data=tanuloi6_2010)
+summary(m_t_2010_6)
+
+#2011
+#Tanuló hány évig járt óvodába 2011_10
+tanuloi10_2011 <- read_dta("2011_tanuloi_10.dta")
+m_t_2011_10 <-lm(m_zpsc~t3,data=tanuloi10_2011)
+summary(m_t_2011_10)
+
+#Tanuló hány évig járt óvodába 2011_8
+tanuloi8_2011 <- read_dta("2011_tanuloi_8.dta")
+m_t_2011_8 <-lm(m_zpsc~t3,data=tanuloi8_2011)
+summary(m_t_2011_8)
+
+#Tanuló hány évig járt óvodába 2011_6
+tanuloi6_2011 <- read_dta("2011_tanuloi_6.dta")
+m_t_2011_6 <-lm(m_zpsc~t3,data=tanuloi6_2011)
+summary(m_t_2011_6)
+
+#2012
+#Tanuló hány évig járt óvodába 2012_10
+tanuloi10_2012 <- read_dta("2012_tanuloi_10.dta")
+m_t_2012_10 <-lm(m_zpsc~t3,data=tanuloi10_2012)
+summary(m_t_2012_10)
+
+#Tanuló hány évig járt óvodába 2012_8
+tanuloi8_2012 <- read_dta("2012_tanuloi_8.dta")
+m_t_2012_8 <-lm(m_zpsc~t3,data=tanuloi8_2012)
+summary(m_t_2012_8)
+
+#Tanuló hány évig járt óvodába 2012_6
+tanuloi6_2012 <- read_dta("2012_tanuloi_6.dta")
+m_t_2012_6 <-lm(m_zpsc~t3,data=tanuloi6_2012)
+summary(m_t_2012_6)
+
+
+#2013
+#Tanuló hány évig járt óvodába 2013_10
+tanuloi10_2013 <- read_dta("2013_tanuloi_10.dta")
+m_t_2013_10 <-lm(m_zpsc~t3,data=tanuloi10_2013)
+summary(m_t_2013_10)
+
+#Tanuló hány évig járt óvodába 2013_8
+tanuloi8_2013 <- read_dta("2013_tanuloi_8.dta")
+m_t_2013_8 <-lm(m_zpsc~t3,data=tanuloi8_2013)
+summary(m_t_2013_8)
+
+#Tanuló hány évig járt óvodába 2013_6
+tanuloi6_2013 <- read_dta("2013_tanuloi_6.dta")
+m_t_2013_6 <-lm(m_zpsc~t3,data=tanuloi6_2013)
+summary(m_t_2013_6)
+
+
+#2014
+#Tanuló hány évig járt óvodába 2014_10
+tanuloi10_2014 <- read_dta("2014_tanuloi_10.dta")
+m_t_2014_10 <-lm(m_zpsc~t3,data=tanuloi10_2014)
+summary(m_t_2014_10)
+
+#Tanuló hány évig járt óvodába 2014_8
+tanuloi8_2014 <- read_dta("2014_tanuloi_8.dta")
+m_t_2014_8 <-lm(m_zpsc~t3,data=tanuloi8_2014)
+summary(m_t_2014_8)
+
+#Tanuló hány évig járt óvodába 2014_6
+tanuloi6_2014 <- read_dta("2014_tanuloi_6.dta")
+m_t_2014_6 <-lm(m_zpsc~t3,data=tanuloi6_2014)
+summary(m_t_2014_6)
+
+
+#2015
+#Tanuló hány évig járt óvodába 2015_10
+tanuloi10_2015 <- read_dta("2015_tanuloi_10.dta")
+m_t_2015_10 <-lm(m_zpsc~t3,data=tanuloi10_2015)
+summary(m_t_2015_10)
+
+#Tanuló hány évig járt óvodába 2015_8
+tanuloi8_2015 <- read_dta("2015_tanuloi_8.dta")
+m_t_2015_8 <-lm(m_zpsc~t3,data=tanuloi8_2015)
+summary(m_t_2015_8)
+
+#Tanuló hány évig járt óvodába 2015_6
+tanuloi6_2015 <- read_dta("2015_tanuloi_6.dta")
+m_t_2015_6 <-lm(m_zpsc~t3,data=tanuloi6_2015)
+summary(m_t_2015_6)
+
+
+#2016
+#Tanuló hány évig járt óvodába 2016_10
+tanuloi10_2016 <- read_dta("2016_tanuloi_10.dta")
+m_t_2016_10 <-lm(m_zpsc~t3,data=tanuloi10_2016)
+summary(m_t_2016_10)
+
+#Tanuló hány évig járt óvodába 2016_8
+tanuloi8_2016 <- read_dta("2016_tanuloi_8.dta")
+m_t_2016_8 <-lm(m_zpsc~t3,data=tanuloi8_2016)
+summary(m_t_2016_8)
+
+#Tanuló hány évig járt óvodába 2016_6
+tanuloi6_2016 <- read_dta("2016_tanuloi_6.dta")
+m_t_2016_6 <-lm(m_zpsc~t3,data=tanuloi6_2016)
+summary(m_t_2016_6)
+
+
+#2017
+#Tanuló hány évig járt óvodába 2017_10
+tanuloi10_2017 <- read_dta("2017_tanuloi_10.dta")
+m_t_2017_10 <-lm(m_zpsc~t3,data=tanuloi10_2017)
+summary(m_t_2017_10)
+
+#Tanuló hány évig járt óvodába 2017_8
+tanuloi8_2017 <- read_dta("2017_tanuloi_8.dta")
+m_t_2017_8 <-lm(m_zpsc~t3,data=tanuloi8_2017)
+summary(m_t_2017_8)
+
+#Tanuló hány évig járt óvodába 2017_6
+tanuloi6_2017 <- read_dta("2017_tanuloi_6.dta")
+m_t_2017_6 <-lm(m_zpsc~t3,data=tanuloi6_2017)
+summary(m_t_2017_6)
+
+
+#2018
+#Tanuló hány évig járt óvodába 2018_10
+tanuloi10_2018 <- read_dta("2018_tanuloi_10.dta")
+m_t_2018_10 <-lm(m_zpsc~t3,data=tanuloi10_2018)
+summary(m_t_2018_10)
+
+#Tanuló hány évig járt óvodába 2018_8
+tanuloi8_2018 <- read_dta("2018_tanuloi_8.dta")
+m_t_2018_8 <-lm(m_zpsc~t3,data=tanuloi8_2018)
+summary(m_t_2018_8)
+
+#Tanuló hány évig járt óvodába 2018_6
+tanuloi6_2018_2 <- read_dta("2018_tanuloi_6.dta")
+m_t_2018_6 <-lm(m_zpsc~t3,data=tanuloi6_2018)
+summary(m_t_2018_6)
+tanuloi6_2018<-read_dta("2018_tanuloi_6.dta")
+
+
+#2019
+#Tanuló hány évig járt óvodába 2019_10
+tanuloi10_2019 <- read_dta("2019_tanuloi_10.dta")
+m_t_2019_10 <-lm(m_zpsc~t3,data=tanuloi10_2019)
+summary(m_t_2019_10)
+
+#Tanuló hány évig járt óvodába 2019_8
+tanuloi8_2019 <- read_dta("2019_tanuloi_8.dta")
+m_t_2019_8 <-lm(m_zpsc~t3,data=tanuloi8_2019)
+summary(m_t_2019_8)
+
+#Tanuló hány évig járt óvodába 2019_6
+tanuloi6_2019_2 <- read_dta("2019_tanuloi_6.dta")
+tanuloi6_2019<-read_dta("2019_tanuloi_6.dta")
+m_t_2019_6 <-lm(m_zpsc~t3,data=tanuloi6_2019)
+summary(m_t_2019_6)
+
+#Osztálybajárás átlaga évenként
+mean(tanuloi10_2006$t3,na.rm = TRUE)#5.698078
+mean(tanuloi10_2007$t3,na.rm = TRUE)#5.697279
+mean(tanuloi10_2008$t3,na.rm = TRUE)#6.123219
+mean(tanuloi10_2009$t3,na.rm = TRUE)#6.21664
+mean(tanuloi10_2010$t3,na.rm = TRUE)#6.250275
+mean(tanuloi10_2011$t3,na.rm = TRUE)#6.274673
+mean(tanuloi10_2012$t3,na.rm = TRUE)#6.293674
+mean(tanuloi10_2013$t3,na.rm = TRUE)#6.308935
+mean(tanuloi10_2014$t3,na.rm = TRUE)#6.313338
+mean(tanuloi10_2015$t3,na.rm = TRUE)#6.353532
+mean(tanuloi10_2016$t3,na.rm = TRUE)#6.335381
+mean(tanuloi10_2017$t3,na.rm = TRUE)#6.361628
+mean(tanuloi10_2018$t3,na.rm = TRUE)#6.371439
+mean(tanuloi10_2019$t3,na.rm = TRUE)#6.373455
+
+#Ugyanez csak hisztogrammal/vagy inkább barplottal
+#2006
+#10
+t3_2006_1<-sum((tanuloi10_2006$t3)==1,na.rm = TRUE)
+t3_2006_2<-sum((tanuloi10_2006$t3)==2,na.rm = TRUE)
+t3_2006_3<-sum((tanuloi10_2006$t3)==3,na.rm = TRUE)
+t3_2006_4<-sum((tanuloi10_2006$t3)==4,na.rm = TRUE)
+t3_2006_5<-sum((tanuloi10_2006$t3)==5,na.rm = TRUE)
+t3_2006_6<-sum((tanuloi10_2006$t3)==6,na.rm = TRUE)
+t3_2006_7<-sum((tanuloi10_2006$t3)==7,na.rm = TRUE)
+t3_2006_8<-sum((tanuloi10_2006$t3)==8,na.rm = TRUE)
+
+#8
+t3_2006_8_1<-sum((tanuloi8_2006$t3)==1,na.rm = TRUE)
+t3_2006_8_2<-sum((tanuloi8_2006$t3)==2,na.rm = TRUE)
+t3_2006_8_3<-sum((tanuloi8_2006$t3)==3,na.rm = TRUE)
+t3_2006_8_4<-sum((tanuloi8_2006$t3)==4,na.rm = TRUE)
+t3_2006_8_5<-sum((tanuloi8_2006$t3)==5,na.rm = TRUE)
+t3_2006_8_6<-sum((tanuloi8_2006$t3)==6,na.rm = TRUE)
+t3_2006_8_7<-sum((tanuloi8_2006$t3)==7,na.rm = TRUE)
+t3_2006_8_8<-sum((tanuloi8_2006$t3)==8,na.rm = TRUE)
+
+#6
+t3_2006_6_1<-sum((tanuloi6_2006$t3)==1,na.rm = TRUE)
+t3_2006_6_2<-sum((tanuloi6_2006$t3)==2,na.rm = TRUE)
+t3_2006_6_3<-sum((tanuloi6_2006$t3)==3,na.rm = TRUE)
+t3_2006_6_4<-sum((tanuloi6_2006$t3)==4,na.rm = TRUE)
+t3_2006_6_5<-sum((tanuloi6_2006$t3)==5,na.rm = TRUE)
+t3_2006_6_6<-sum((tanuloi6_2006$t3)==6,na.rm = TRUE)
+t3_2006_6_7<-sum((tanuloi6_2006$t3)==7,na.rm = TRUE)
+t3_2006_6_8<-sum((tanuloi6_2006$t3)==8,na.rm = TRUE)
+
+#2007
+#10
+t3_2007_1<-sum((tanuloi10_2007$t3)==1,na.rm = TRUE)
+t3_2007_2<-sum((tanuloi10_2007$t3)==2,na.rm = TRUE)
+t3_2007_3<-sum((tanuloi10_2007$t3)==3,na.rm = TRUE)
+t3_2007_4<-sum((tanuloi10_2007$t3)==4,na.rm = TRUE)
+t3_2007_5<-sum((tanuloi10_2007$t3)==5,na.rm = TRUE)
+t3_2007_6<-sum((tanuloi10_2007$t3)==6,na.rm = TRUE)
+t3_2007_7<-sum((tanuloi10_2007$t3)==7,na.rm = TRUE)
+t3_2007_8<-sum((tanuloi10_2007$t3)==8,na.rm = TRUE)
+
+#8
+t3_2007_8_1<-sum((tanuloi8_2007$t3)==1,na.rm = TRUE)
+t3_2007_8_2<-sum((tanuloi8_2007$t3)==2,na.rm = TRUE)
+t3_2007_8_3<-sum((tanuloi8_2007$t3)==3,na.rm = TRUE)
+t3_2007_8_4<-sum((tanuloi8_2007$t3)==4,na.rm = TRUE)
+t3_2007_8_5<-sum((tanuloi8_2007$t3)==5,na.rm = TRUE)
+t3_2007_8_6<-sum((tanuloi8_2007$t3)==6,na.rm = TRUE)
+t3_2007_8_7<-sum((tanuloi8_2007$t3)==7,na.rm = TRUE)
+t3_2007_8_8<-sum((tanuloi8_2007$t3)==8,na.rm = TRUE)
+
+#6
+t3_2007_6_1<-sum((tanuloi6_2007$t3)==1,na.rm = TRUE)
+t3_2007_6_2<-sum((tanuloi6_2007$t3)==2,na.rm = TRUE)
+t3_2007_6_3<-sum((tanuloi6_2007$t3)==3,na.rm = TRUE)
+t3_2007_6_4<-sum((tanuloi6_2007$t3)==4,na.rm = TRUE)
+t3_2007_6_5<-sum((tanuloi6_2007$t3)==5,na.rm = TRUE)
+t3_2007_6_6<-sum((tanuloi6_2007$t3)==6,na.rm = TRUE)
+t3_2007_6_7<-sum((tanuloi6_2007$t3)==7,na.rm = TRUE)
+t3_2007_6_8<-sum((tanuloi6_2007$t3)==8,na.rm = TRUE)
+
+#2012
+#10
+t3_2012_1<-sum((tanuloi10_2012$t3)==1,na.rm = TRUE)
+t3_2012_2<-sum((tanuloi10_2012$t3)==2,na.rm = TRUE)
+t3_2012_3<-sum((tanuloi10_2012$t3)==3,na.rm = TRUE)
+t3_2012_4<-sum((tanuloi10_2012$t3)==4,na.rm = TRUE)
+t3_2012_5<-sum((tanuloi10_2012$t3)==5,na.rm = TRUE)
+t3_2012_6<-sum((tanuloi10_2012$t3)==6,na.rm = TRUE)
+t3_2012_7<-sum((tanuloi10_2012$t3)==7,na.rm = TRUE)
+t3_2012_8<-sum((tanuloi10_2012$t3)==8,na.rm = TRUE)
+
+#8
+t3_2012_8_1<-sum((tanuloi8_2012$t3)==1,na.rm = TRUE)
+t3_2012_8_2<-sum((tanuloi8_2012$t3)==2,na.rm = TRUE)
+t3_2012_8_3<-sum((tanuloi8_2012$t3)==3,na.rm = TRUE)
+t3_2012_8_4<-sum((tanuloi8_2012$t3)==4,na.rm = TRUE)
+t3_2012_8_5<-sum((tanuloi8_2012$t3)==5,na.rm = TRUE)
+t3_2012_8_6<-sum((tanuloi8_2012$t3)==6,na.rm = TRUE)
+t3_2012_8_7<-sum((tanuloi8_2012$t3)==7,na.rm = TRUE)
+t3_2012_8_8<-sum((tanuloi8_2012$t3)==8,na.rm = TRUE)
+
+#6
+t3_2012_6_1<-sum((tanuloi6_2012$t3)==1,na.rm = TRUE)
+t3_2012_6_2<-sum((tanuloi6_2012$t3)==2,na.rm = TRUE)
+t3_2012_6_3<-sum((tanuloi6_2012$t3)==3,na.rm = TRUE)
+t3_2012_6_4<-sum((tanuloi6_2012$t3)==4,na.rm = TRUE)
+t3_2012_6_5<-sum((tanuloi6_2012$t3)==5,na.rm = TRUE)
+t3_2012_6_6<-sum((tanuloi6_2012$t3)==6,na.rm = TRUE)
+t3_2012_6_7<-sum((tanuloi6_2012$t3)==7,na.rm = TRUE)
+t3_2012_6_8<-sum((tanuloi6_2012$t3)==8,na.rm = TRUE)
+
+#2015
+#10
+t3_2015_1<-sum((tanuloi10_2015$t3)==1,na.rm = TRUE)
+t3_2015_2<-sum((tanuloi10_2015$t3)==2,na.rm = TRUE)
+t3_2015_3<-sum((tanuloi10_2015$t3)==3,na.rm = TRUE)
+t3_2015_4<-sum((tanuloi10_2015$t3)==4,na.rm = TRUE)
+t3_2015_5<-sum((tanuloi10_2015$t3)==5,na.rm = TRUE)
+t3_2015_6<-sum((tanuloi10_2015$t3)==6,na.rm = TRUE)
+t3_2015_7<-sum((tanuloi10_2015$t3)==7,na.rm = TRUE)
+t3_2015_8<-sum((tanuloi10_2015$t3)==8,na.rm = TRUE)
+
+#8
+t3_2015_8_1<-sum((tanuloi8_2015$t3)==1,na.rm = TRUE)
+t3_2015_8_2<-sum((tanuloi8_2015$t3)==2,na.rm = TRUE)
+t3_2015_8_3<-sum((tanuloi8_2015$t3)==3,na.rm = TRUE)
+t3_2015_8_4<-sum((tanuloi8_2015$t3)==4,na.rm = TRUE)
+t3_2015_8_5<-sum((tanuloi8_2015$t3)==5,na.rm = TRUE)
+t3_2015_8_6<-sum((tanuloi8_2015$t3)==6,na.rm = TRUE)
+t3_2015_8_7<-sum((tanuloi8_2015$t3)==7,na.rm = TRUE)
+t3_2015_8_8<-sum((tanuloi8_2015$t3)==8,na.rm = TRUE)
+
+#6
+t3_2015_6_1<-sum((tanuloi6_2015$t3)==1,na.rm = TRUE)
+t3_2015_6_2<-sum((tanuloi6_2015$t3)==2,na.rm = TRUE)
+t3_2015_6_3<-sum((tanuloi6_2015$t3)==3,na.rm = TRUE)
+t3_2015_6_4<-sum((tanuloi6_2015$t3)==4,na.rm = TRUE)
+t3_2015_6_5<-sum((tanuloi6_2015$t3)==5,na.rm = TRUE)
+t3_2015_6_6<-sum((tanuloi6_2015$t3)==6,na.rm = TRUE)
+t3_2015_6_7<-sum((tanuloi6_2015$t3)==7,na.rm = TRUE)
+t3_2015_6_8<-sum((tanuloi6_2015$t3)==8,na.rm = TRUE)
+
+#2019
+#10
+t3_2019_1<-sum((tanuloi10_2019$t3)==1,na.rm = TRUE)
+t3_2019_2<-sum((tanuloi10_2019$t3)==2,na.rm = TRUE)
+t3_2019_3<-sum((tanuloi10_2019$t3)==3,na.rm = TRUE)
+t3_2019_4<-sum((tanuloi10_2019$t3)==4,na.rm = TRUE)
+t3_2019_5<-sum((tanuloi10_2019$t3)==5,na.rm = TRUE)
+t3_2019_6<-sum((tanuloi10_2019$t3)==6,na.rm = TRUE)
+t3_2019_7<-sum((tanuloi10_2019$t3)==7,na.rm = TRUE)
+t3_2019_8<-sum((tanuloi10_2019$t3)==8,na.rm = TRUE)
+
+#8
+t3_2019_8_1<-sum((tanuloi8_2019$t3)==1,na.rm = TRUE)
+t3_2019_8_2<-sum((tanuloi8_2019$t3)==2,na.rm = TRUE)
+t3_2019_8_3<-sum((tanuloi8_2019$t3)==3,na.rm = TRUE)
+t3_2019_8_4<-sum((tanuloi8_2019$t3)==4,na.rm = TRUE)
+t3_2019_8_5<-sum((tanuloi8_2019$t3)==5,na.rm = TRUE)
+t3_2019_8_6<-sum((tanuloi8_2019$t3)==6,na.rm = TRUE)
+t3_2019_8_7<-sum((tanuloi8_2019$t3)==7,na.rm = TRUE)
+t3_2019_8_8<-sum((tanuloi8_2019$t3)==8,na.rm = TRUE)
+
+#6
+t3_2019_6_1<-sum((tanuloi6_2019$t3)==1,na.rm = TRUE)
+t3_2019_6_2<-sum((tanuloi6_2019$t3)==2,na.rm = TRUE)
+t3_2019_6_3<-sum((tanuloi6_2019$t3)==3,na.rm = TRUE)
+t3_2019_6_4<-sum((tanuloi6_2019$t3)==4,na.rm = TRUE)
+t3_2019_6_5<-sum((tanuloi6_2019$t3)==5,na.rm = TRUE)
+t3_2019_6_6<-sum((tanuloi6_2019$t3)==6,na.rm = TRUE)
+t3_2019_6_7<-sum((tanuloi6_2019$t3)==7,na.rm = TRUE)
+t3_2019_6_8<-sum((tanuloi6_2019$t3)==8,na.rm = TRUE)
+
+#Végzettségek eloszlásai
+#2006
+#10
+t28_2006_1<-sum((tanuloi10_2006$t28)==1,na.rm = TRUE)
+t28_2006_2<-sum((tanuloi10_2006$t28)==2,na.rm = TRUE)
+t28_2006_3<-sum((tanuloi10_2006$t28)==3,na.rm = TRUE)
+t28_2006_4<-sum((tanuloi10_2006$t28)==4,na.rm = TRUE)
+t28_2006_5<-sum((tanuloi10_2006$t28)==5,na.rm = TRUE)
+t28_2006_6<-sum((tanuloi10_2006$t28)==6,na.rm = TRUE)
+t28_2006_7<-sum((tanuloi10_2006$t28)==7,na.rm = TRUE)
+t28_2006_8<-sum((tanuloi10_2006$t28)==8,na.rm = TRUE)
+
+#8
+t28_2006_8_1<-sum((tanuloi8_2006$t28)==1,na.rm = TRUE)
+t28_2006_8_2<-sum((tanuloi8_2006$t28)==2,na.rm = TRUE)
+t28_2006_8_3<-sum((tanuloi8_2006$t28)==3,na.rm = TRUE)
+t28_2006_8_4<-sum((tanuloi8_2006$t28)==4,na.rm = TRUE)
+t28_2006_8_5<-sum((tanuloi8_2006$t28)==5,na.rm = TRUE)
+t28_2006_8_6<-sum((tanuloi8_2006$t28)==6,na.rm = TRUE)
+t28_2006_8_7<-sum((tanuloi8_2006$t28)==7,na.rm = TRUE)
+t28_2006_8_8<-sum((tanuloi8_2006$t28)==8,na.rm = TRUE)
+
+#6
+t28_2006_6_1<-sum((tanuloi6_2006$t28)==1,na.rm = TRUE)
+t28_2006_6_2<-sum((tanuloi6_2006$t28)==2,na.rm = TRUE)
+t28_2006_6_3<-sum((tanuloi6_2006$t28)==3,na.rm = TRUE)
+t28_2006_6_4<-sum((tanuloi6_2006$t28)==4,na.rm = TRUE)
+t28_2006_6_5<-sum((tanuloi6_2006$t28)==5,na.rm = TRUE)
+t28_2006_6_6<-sum((tanuloi6_2006$t28)==6,na.rm = TRUE)
+t28_2006_6_7<-sum((tanuloi6_2006$t28)==7,na.rm = TRUE)
+t28_2006_6_8<-sum((tanuloi6_2006$t28)==8,na.rm = TRUE)
+
+#2015
+#10
+t28_2015_1<-sum((tanuloi10_2015$t28)==1,na.rm = TRUE)
+t28_2015_2<-sum((tanuloi10_2015$t28)==2,na.rm = TRUE)
+t28_2015_3<-sum((tanuloi10_2015$t28)==3,na.rm = TRUE)
+t28_2015_4<-sum((tanuloi10_2015$t28)==4,na.rm = TRUE)
+t28_2015_5<-sum((tanuloi10_2015$t28)==5,na.rm = TRUE)
+t28_2015_6<-sum((tanuloi10_2015$t28)==6,na.rm = TRUE)
+t28_2015_7<-sum((tanuloi10_2015$t28)==7,na.rm = TRUE)
+t28_2015_8<-sum((tanuloi10_2015$t28)==8,na.rm = TRUE)
+
+#8
+t28_2015_8_1<-sum((tanuloi8_2015$t28)==1,na.rm = TRUE)
+t28_2015_8_2<-sum((tanuloi8_2015$t28)==2,na.rm = TRUE)
+t28_2015_8_3<-sum((tanuloi8_2015$t28)==3,na.rm = TRUE)
+t28_2015_8_4<-sum((tanuloi8_2015$t28)==4,na.rm = TRUE)
+t28_2015_8_5<-sum((tanuloi8_2015$t28)==5,na.rm = TRUE)
+t28_2015_8_6<-sum((tanuloi8_2015$t28)==6,na.rm = TRUE)
+t28_2015_8_7<-sum((tanuloi8_2015$t28)==7,na.rm = TRUE)
+t28_2015_8_8<-sum((tanuloi8_2015$t28)==8,na.rm = TRUE)
+
+#6
+t28_2015_6_1<-sum((tanuloi6_2015$t28)==1,na.rm = TRUE)
+t28_2015_6_2<-sum((tanuloi6_2015$t28)==2,na.rm = TRUE)
+t28_2015_6_3<-sum((tanuloi6_2015$t28)==3,na.rm = TRUE)
+t28_2015_6_4<-sum((tanuloi6_2015$t28)==4,na.rm = TRUE)
+t28_2015_6_5<-sum((tanuloi6_2015$t28)==5,na.rm = TRUE)
+t28_2015_6_6<-sum((tanuloi6_2015$t28)==6,na.rm = TRUE)
+t28_2015_6_7<-sum((tanuloi6_2015$t28)==7,na.rm = TRUE)
+t28_2015_6_8<-sum((tanuloi6_2015$t28)==8,na.rm = TRUE)
+
+#2019
+#10
+t28_2019_1<-sum((tanuloi10_2019$t28)==1,na.rm = TRUE)
+t28_2019_2<-sum((tanuloi10_2019$t28)==2,na.rm = TRUE)
+t28_2019_3<-sum((tanuloi10_2019$t28)==3,na.rm = TRUE)
+t28_2019_4<-sum((tanuloi10_2019$t28)==4,na.rm = TRUE)
+t28_2019_5<-sum((tanuloi10_2019$t28)==5,na.rm = TRUE)
+t28_2019_6<-sum((tanuloi10_2019$t28)==6,na.rm = TRUE)
+t28_2019_7<-sum((tanuloi10_2019$t28)==7,na.rm = TRUE)
+t28_2019_8<-sum((tanuloi10_2019$t28)==8,na.rm = TRUE)
+
+#8
+t28_2019_8_1<-sum((tanuloi8_2019$t28)==1,na.rm = TRUE)
+t28_2019_8_2<-sum((tanuloi8_2019$t28)==2,na.rm = TRUE)
+t28_2019_8_3<-sum((tanuloi8_2019$t28)==3,na.rm = TRUE)
+t28_2019_8_4<-sum((tanuloi8_2019$t28)==4,na.rm = TRUE)
+t28_2019_8_5<-sum((tanuloi8_2019$t28)==5,na.rm = TRUE)
+t28_2019_8_6<-sum((tanuloi8_2019$t28)==6,na.rm = TRUE)
+t28_2019_8_7<-sum((tanuloi8_2019$t28)==7,na.rm = TRUE)
+t28_2019_8_8<-sum((tanuloi8_2019$t28)==8,na.rm = TRUE)
+
+#6
+t28_2019_6_1<-sum((tanuloi6_2019$t28)==1,na.rm = TRUE)
+t28_2019_6_2<-sum((tanuloi6_2019$t28)==2,na.rm = TRUE)
+t28_2019_6_3<-sum((tanuloi6_2019$t28)==3,na.rm = TRUE)
+t28_2019_6_4<-sum((tanuloi6_2019$t28)==4,na.rm = TRUE)
+t28_2019_6_5<-sum((tanuloi6_2019$t28)==5,na.rm = TRUE)
+t28_2019_6_6<-sum((tanuloi6_2019$t28)==6,na.rm = TRUE)
+t28_2019_6_7<-sum((tanuloi6_2019$t28)==7,na.rm = TRUE)
+t28_2019_6_8<-sum((tanuloi6_2019$t28)==8,na.rm = TRUE)
+
+#Apa/nevelõapa végzettsége
+#2006
+#10
+t29_2006_1<-sum((tanuloi10_2006$t29)==1,na.rm = TRUE)
+t29_2006_2<-sum((tanuloi10_2006$t29)==2,na.rm = TRUE)
+t29_2006_3<-sum((tanuloi10_2006$t29)==3,na.rm = TRUE)
+t29_2006_4<-sum((tanuloi10_2006$t29)==4,na.rm = TRUE)
+t29_2006_5<-sum((tanuloi10_2006$t29)==5,na.rm = TRUE)
+t29_2006_6<-sum((tanuloi10_2006$t29)==6,na.rm = TRUE)
+t29_2006_7<-sum((tanuloi10_2006$t29)==7,na.rm = TRUE)
+t29_2006_8<-sum((tanuloi10_2006$t29)==8,na.rm = TRUE)
+
+#8
+t29_2006_8_1<-sum((tanuloi8_2006$t29)==1,na.rm = TRUE)
+t29_2006_8_2<-sum((tanuloi8_2006$t29)==2,na.rm = TRUE)
+t29_2006_8_3<-sum((tanuloi8_2006$t29)==3,na.rm = TRUE)
+t29_2006_8_4<-sum((tanuloi8_2006$t29)==4,na.rm = TRUE)
+t29_2006_8_5<-sum((tanuloi8_2006$t29)==5,na.rm = TRUE)
+t29_2006_8_6<-sum((tanuloi8_2006$t29)==6,na.rm = TRUE)
+t29_2006_8_7<-sum((tanuloi8_2006$t29)==7,na.rm = TRUE)
+t29_2006_8_8<-sum((tanuloi8_2006$t29)==8,na.rm = TRUE)
+
+#6
+t29_2006_6_1<-sum((tanuloi6_2006$t29)==1,na.rm = TRUE)
+t29_2006_6_2<-sum((tanuloi6_2006$t29)==2,na.rm = TRUE)
+t29_2006_6_3<-sum((tanuloi6_2006$t29)==3,na.rm = TRUE)
+t29_2006_6_4<-sum((tanuloi6_2006$t29)==4,na.rm = TRUE)
+t29_2006_6_5<-sum((tanuloi6_2006$t29)==5,na.rm = TRUE)
+t29_2006_6_6<-sum((tanuloi6_2006$t29)==6,na.rm = TRUE)
+t29_2006_6_7<-sum((tanuloi6_2006$t29)==7,na.rm = TRUE)
+t29_2006_6_8<-sum((tanuloi6_2006$t29)==8,na.rm = TRUE)
+
+#2015
+#10
+t29_2015_1<-sum((tanuloi10_2015$t29)==1,na.rm = TRUE)
+t29_2015_2<-sum((tanuloi10_2015$t29)==2,na.rm = TRUE)
+t29_2015_3<-sum((tanuloi10_2015$t29)==3,na.rm = TRUE)
+t29_2015_4<-sum((tanuloi10_2015$t29)==4,na.rm = TRUE)
+t29_2015_5<-sum((tanuloi10_2015$t29)==5,na.rm = TRUE)
+t29_2015_6<-sum((tanuloi10_2015$t29)==6,na.rm = TRUE)
+t29_2015_7<-sum((tanuloi10_2015$t29)==7,na.rm = TRUE)
+t29_2015_8<-sum((tanuloi10_2015$t29)==8,na.rm = TRUE)
+
+#8
+t29_2015_8_1<-sum((tanuloi8_2015$t29)==1,na.rm = TRUE)
+t29_2015_8_2<-sum((tanuloi8_2015$t29)==2,na.rm = TRUE)
+t29_2015_8_3<-sum((tanuloi8_2015$t29)==3,na.rm = TRUE)
+t29_2015_8_4<-sum((tanuloi8_2015$t29)==4,na.rm = TRUE)
+t29_2015_8_5<-sum((tanuloi8_2015$t29)==5,na.rm = TRUE)
+t29_2015_8_6<-sum((tanuloi8_2015$t29)==6,na.rm = TRUE)
+t29_2015_8_7<-sum((tanuloi8_2015$t29)==7,na.rm = TRUE)
+t29_2015_8_8<-sum((tanuloi8_2015$t29)==8,na.rm = TRUE)
+
+#6
+t29_2015_6_1<-sum((tanuloi6_2015$t29)==1,na.rm = TRUE)
+t29_2015_6_2<-sum((tanuloi6_2015$t29)==2,na.rm = TRUE)
+t29_2015_6_3<-sum((tanuloi6_2015$t29)==3,na.rm = TRUE)
+t29_2015_6_4<-sum((tanuloi6_2015$t29)==4,na.rm = TRUE)
+t29_2015_6_5<-sum((tanuloi6_2015$t29)==5,na.rm = TRUE)
+t29_2015_6_6<-sum((tanuloi6_2015$t29)==6,na.rm = TRUE)
+t29_2015_6_7<-sum((tanuloi6_2015$t29)==7,na.rm = TRUE)
+t29_2015_6_8<-sum((tanuloi6_2015$t29)==8,na.rm = TRUE)
+
+#2019$
+#10
+t29_2019_1<-sum((tanuloi10_2019$t29)==1,na.rm = TRUE)
+t29_2019_2<-sum((tanuloi10_2019$t29)==2,na.rm = TRUE)
+t29_2019_3<-sum((tanuloi10_2019$t29)==3,na.rm = TRUE)
+t29_2019_4<-sum((tanuloi10_2019$t29)==4,na.rm = TRUE)
+t29_2019_5<-sum((tanuloi10_2019$t29)==5,na.rm = TRUE)
+t29_2019_6<-sum((tanuloi10_2019$t29)==6,na.rm = TRUE)
+t29_2019_7<-sum((tanuloi10_2019$t29)==7,na.rm = TRUE)
+t29_2019_8<-sum((tanuloi10_2019$t29)==8,na.rm = TRUE)
+
+#8
+t29_2019_8_1<-sum((tanuloi8_2019$t29)==1,na.rm = TRUE)
+t29_2019_8_2<-sum((tanuloi8_2019$t29)==2,na.rm = TRUE)
+t29_2019_8_3<-sum((tanuloi8_2019$t29)==3,na.rm = TRUE)
+t29_2019_8_4<-sum((tanuloi8_2019$t29)==4,na.rm = TRUE)
+t29_2019_8_5<-sum((tanuloi8_2019$t29)==5,na.rm = TRUE)
+t29_2019_8_6<-sum((tanuloi8_2019$t29)==6,na.rm = TRUE)
+t29_2019_8_7<-sum((tanuloi8_2019$t29)==7,na.rm = TRUE)
+t29_2019_8_8<-sum((tanuloi8_2019$t29)==8,na.rm = TRUE)
+
+#6
+t29_2019_6_1<-sum((tanuloi6_2019$t29)==1,na.rm = TRUE)
+t29_2019_6_2<-sum((tanuloi6_2019$t29)==2,na.rm = TRUE)
+t29_2019_6_3<-sum((tanuloi6_2019$t29)==3,na.rm = TRUE)
+t29_2019_6_4<-sum((tanuloi6_2019$t29)==4,na.rm = TRUE)
+t29_2019_6_5<-sum((tanuloi6_2019$t29)==5,na.rm = TRUE)
+t29_2019_6_6<-sum((tanuloi6_2019$t29)==6,na.rm = TRUE)
+t29_2019_6_7<-sum((tanuloi6_2019$t29)==7,na.rm = TRUE)
+t29_2019_6_8<-sum((tanuloi6_2019$t29)==8,na.rm = TRUE)
+
+#átlagok évenként
+df<-data.frame(mean(tanuloi10_2006$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2007$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2008$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2009$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2010$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2011$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2012$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2013$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2014$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2015$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2016$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2017$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2018$m_zpsc,na.rm = TRUE),
+mean(tanuloi10_2019$m_zpsc,na.rm = TRUE))
+
+#10
+mean(tanuloi10_2006$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2007$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2008$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2009$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2010$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2011$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2012$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2013$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2014$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2015$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2016$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2017$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2018$m_zpsc,na.rm = TRUE)
+mean(tanuloi10_2019$m_zpsc,na.rm = TRUE)
+
+#8
+mean(tanuloi8_2006$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2007$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2008$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2009$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2010$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2011$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2012$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2013$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2014$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2015$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2016$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2017$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2018$m_zpsc,na.rm = TRUE)
+mean(tanuloi8_2019$m_zpsc,na.rm = TRUE)
+
+#6
+mean(tanuloi6_2006$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2007$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2008$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2009$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2010$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2011$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2012$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2013$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2014$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2015$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2016$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2017$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2018$m_zpsc,na.rm = TRUE)
+mean(tanuloi6_2019$m_zpsc,na.rm = TRUE)
+plot(df)
+
+sd(tanuloi10_2006$o_zpsc,na.rm = TRUE)
+sd(tanuloi10_2007$o_zpsc,na.rm = TRUE)
+
+#6
+sd(tanuloi6_2006$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2007$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2008$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2009$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2010$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2011$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2012$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2013$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2014$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2015$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2016$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2017$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2018$m_zpsc,na.rm = TRUE)
+sd(tanuloi6_2019$m_zpsc,na.rm = TRUE)
+
+#8
+sd(tanuloi8_2006$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2007$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2008$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2009$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2010$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2011$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2012$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2013$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2014$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2015$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2016$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2017$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2018$m_zpsc,na.rm = TRUE)
+sd(tanuloi8_2019$m_zpsc,na.rm = TRUE)
+
+
+#10
+sd(tanuloi10_2006$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2007$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2008$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2009$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2010$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2011$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2012$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2013$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2014$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2015$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2016$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2017$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2018$m_zpsc,na.rm = TRUE)
+sd(tanuloi10_2019$m_zpsc,na.rm = TRUE)
+
+colnames(tanuloi6_2019)
+
+#Regressziós szárnypróbálgatás
+m_óvoda_2006_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2006)
+summary(m_óvoda_2006_6)
+
+m_óvoda_2007_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2007)
+summary(m_óvoda_2007_6)
+
+m_óvoda_2008_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2008)
+summary(m_óvoda_2008_6 )
+
+m_óvoda_2009_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2009)
+summary(m_óvoda_2009_6)
+
+m_óvoda_2010_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2010)
+summary(m_óvoda_2010_6)
+
+m_óvoda_2011_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2011)
+summary(m_óvoda_2011_6)
+
+m_óvoda_2012_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2012)
+summary(m_óvoda_2012_6)
+
+m_óvoda_2013_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2013)
+summary(m_óvoda_2013_6)
+
+m_óvoda_2014_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2014)
+summary(m_óvoda_2014_6)
+
+m_óvoda_2015_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2015)
+summary(m_óvoda_2015_6)
+
+m_óvoda_2016_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2016)
+summary(m_óvoda_2016_6)
+
+m_óvoda_2017_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2017)
+summary(m_óvoda_2017_6)
+
+m_óvoda_2018_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2018)
+summary(m_óvoda_2018_6)
+
+m_óvoda_2019_6 <-lm(m_zpsc~o_zpsc,data=tanuloi6_2019)
+summary(m_óvoda_2019_6)
+
+
+nagy1_m_óvoda_2019_6<-lm(m_zpsc~t3+t4+t17+t21a+t21b+t21c+t21d+t39,data=tanuloi6_2019)
+summary(nagy1_m_óvoda_2019_6)
+
+plot(nagy1_m_óvoda_2019_6)
+
+ovi_normalt_6_2019<-scale(tanuloi6_2019$t3)
+
+table(tanuloi6_2019$t3,tanuloi6_2019$t28)
+
+#Anya-ovi
+#2019
+t3_t28_2019_6<-as.data.frame(prop.table(table(tanuloi6_2019$t3,tanuloi6_2019$t28)))
+#2018
+t3_t28_2018_6<-as.data.frame(prop.table(table(tanuloi6_2018$t3,tanuloi6_2018$t28)))
+#2017
+t3_t28_2017_6<-as.data.frame(prop.table(table(tanuloi6_2017$t3,tanuloi6_2017$t28)))
+#2016
+t3_t28_2016_6<-as.data.frame(prop.table(table(tanuloi6_2016$t3,tanuloi6_2016$t28)))
+#2015
+t3_t28_2015_6<-as.data.frame(prop.table(table(tanuloi6_2015$t3,tanuloi6_2015$t28)))
+#2014
+t3_t28_2014_6<-as.data.frame(prop.table(table(tanuloi6_2014$t3,tanuloi6_2014$t28)))
+#2013
+t3_t28_2013_6<-as.data.frame(prop.table(table(tanuloi6_2013$t3,tanuloi6_2013$t28)))
+#2012
+t3_t28_2012_6<-as.data.frame(prop.table(table(tanuloi6_2012$t3,tanuloi6_2012$t28)))
+#2011
+t3_t28_2011_6<-as.data.frame(prop.table(table(tanuloi6_2011$t3,tanuloi6_2011$t28)))
+#2010
+t3_t28_2010_6<-as.data.frame(prop.table(table(tanuloi6_2010$t3,tanuloi6_2010$t28)))
+
+#Apa-ovi
+#2019
+t3_t29_2019_6<-as.data.frame(prop.table(table(tanuloi6_2019$t3,tanuloi6_2019$t29)))
+#2018
+t3_t29_2018_6<-as.data.frame(prop.table(table(tanuloi6_2018$t3,tanuloi6_2018$t29)))
+#2017
+t3_t29_2017_6<-as.data.frame(prop.table(table(tanuloi6_2017$t3,tanuloi6_2017$t29)))
+#2016
+t3_t29_2016_6<-as.data.frame(prop.table(table(tanuloi6_2016$t3,tanuloi6_2016$t29)))
+#2015
+t3_t29_2015_6<-as.data.frame(prop.table(table(tanuloi6_2015$t3,tanuloi6_2015$t29)))
+#2014
+t3_t29_2014_6<-as.data.frame(prop.table(table(tanuloi6_2014$t3,tanuloi6_2014$t29)))
+#2013
+t3_t29_2013_6<-as.data.frame(prop.table(table(tanuloi6_2013$t3,tanuloi6_2013$t29)))
+#2012
+t3_t29_2012_6<-as.data.frame(prop.table(table(tanuloi6_2012$t3,tanuloi6_2012$t29)))
+#2011
+t3_t29_2011_6<-as.data.frame(prop.table(table(tanuloi6_2011$t3,tanuloi6_2011$t29)))
+#2010
+t3_t29_2010_6<-as.data.frame(prop.table(table(tanuloi6_2010$t3,tanuloi6_2010$t29)))
+
+
+cor(tanuloi6_2019$t28,tanuloi6_2019$t29,na.rm=TRUE)
+
+#m1 <-lm(m_zpsc~sex,data=tanuloi10_2006)
+cor.test(tanuloi6_2019$t28,tanuloi6_2019$t29)
+
+
+library(ggplot2)
+
+ggplot(tanuloi6_2019, aes(x=t28, y=t29)) +
+  geom_point(size=0.5)+
+  geom_point(color="black" )+
+  labs(
+    title="Munkanlklisg Magyarorszgon",
+    x="Anya végzettsége",
+    y="Apa végzettsége"
+  )
+
+#Tanuló által elérni kívánt legmagasabb iskolai végzettség
+#2018-anya
+t17_t28_2018_6<-as.data.frame(prop.table(table(tanuloi6_2018$t17,tanuloi6_2018$t28)))
+t17_t28_2018_6_1<-as.data.frame(prop.table(table(tanuloi6_2018$t28,tanuloi6_2018$t17)))
+#2018-apa
+t17_t29_2018_6<-as.data.frame(prop.table(table(tanuloi6_2018$t17,tanuloi6_2018$t29)))
+
+
+hist(tanuloi6_2018$t17)
+hist(tanuloi6_2018$t28)
+
+
+t17_t28_t29_2018_6<-as.data.frame(prop.table(table(tanuloi6_2018$t17,tanuloi6_2018$t28,tanuloi6_2018$t29)))
+
+
+nagy1_m_óvoda_2019_6<-lm(m_zpsc~t3+t4+t17+t21a+t21b+t21c+t21d+t39,data=tanuloi6_2019)
+summary(nagy1_m_óvoda_2019_6)
+
+
+nagy2_m_óvoda_2018_6<-lm(m_zpsc~t3+t4+t17+t21a+t21b+t21c+t21d+t39+t23_b,data=tanuloi6_2018)
+summary(nagy2_m_óvoda_2018_6)
+
+
+t3_t23_b_2018_6<-as.data.frame(prop.table(table(tanuloi6_2018$t3,tanuloi6_2018$t23_b)))
+
+
+
+
+
+
+cor.test(tanuloi6_2018$t39,tanuloi6_2018$t29)
+
+
+t17_t28_t29_2018_6<-as.data.frame(prop.table(table(tanuloi6_2018$t17,tanuloi6_2018$t28,tanuloi6_2018$t29)))
+
+
+data_modell1<-data.frame()
+
+install.packages("crosstable")
+library(rcompanion)
+
+install.packages("gmodels")
+library(gmodels)
+
+ct<-CrossTable(tanuloi6_2018$t39,tanuloi6_2018$t29)
+ctd<-data.frame(ct)
+
+install.packages("rcompanion")
+cramer.test(tanuloi6_2018$t39,tanuloi6_2018$t29,na.rm=TRUE)
+
+cramer.test(tanuloi6_2018$t39,tanuloi6_2018$t29)
+
+cor.test(tanuloi6_2018$t39,tanuloi6_2018$t29)
+
+t3_telep_2018_6<-as.data.frame(prop.table(table(tanuloi6_2018$t3,tanuloi6_2018$teltip7_tan)))
+
+ct1<-CrossTable(tanuloi6_2018$t3,tanuloi6_2018$teltip7_tan)
+ct1
+
+cramer::cramer.test(tanuloi6_2018$t3,tanuloi6_2018$teltip7_tan)
+
+
+p1 <- ggplot(tanuloi6_2018, aes(x=m_zpsc, y=t28, fill=t3)) + 
+  geom_boxplot() +
+  facet_wrap(~t3)
+p1
+
+library(dplyr)
+t3_1<-tanuloi6_2018[tanuloi6_2018$t3==1,]
+t3_2<-tanuloi6_2018[tanuloi6_2018$t3==2,]
+sum(t3_1$t3,na.rm=TRUE)
+count(t3_1$t3,na.rm=TRUE)
+
+sum(tanuloi6_2018$t3==9,na.rm=TRUE)
+
+#t3_1
+t3_1<-tanuloi6_2018[tanuloi6_2018$t3==1,]
+#t3_2
+t3_2<-tanuloi6_2018[tanuloi6_2018$t3==2,]
+#t3_3
+t3_3<-tanuloi6_2018[tanuloi6_2018$t3==3,]
+#t3_4
+t3_4<-tanuloi6_2018[tanuloi6_2018$t3==4,]
+#t3_5
+t3_5<-tanuloi6_2018[tanuloi6_2018$t3==5,]
+#t3_6
+t3_6<-tanuloi6_2018[tanuloi6_2018$t3==6,]
+#t3_7
+t3_7<-tanuloi6_2018[tanuloi6_2018$t3==7,]
+#t3_8
+t3_8<-tanuloi6_2018[tanuloi6_2018$t3==8,]
+
+#darabok - anya végzettsége szerint - kevesebb, mint 8 általános
+sum(t3_1$t28==1,na.rm=TRUE)
+sum(t3_2$t28==1,na.rm=TRUE)
+sum(t3_3$t28==1,na.rm=TRUE)
+sum(t3_4$t28==1,na.rm=TRUE)
+sum(t3_5$t28==1,na.rm=TRUE)
+sum(t3_6$t28==1,na.rm=TRUE)
+sum(t3_7$t28==1,na.rm=TRUE)
+sum(t3_8$t28==1,na.rm=TRUE)
+#darabok - anya végzettsége szerint - általános iskola
+sum(t3_1$t28==2,na.rm=TRUE)
+sum(t3_2$t28==2,na.rm=TRUE)
+sum(t3_3$t28==2,na.rm=TRUE)
+sum(t3_4$t28==2,na.rm=TRUE)
+sum(t3_5$t28==2,na.rm=TRUE)
+sum(t3_6$t28==2,na.rm=TRUE)
+sum(t3_7$t28==2,na.rm=TRUE)
+sum(t3_8$t28==2,na.rm=TRUE)
+
+#anya vgzettsge - szakiskola
+sum(t3_1$t28==3,na.rm=TRUE)
+sum(t3_2$t28==3,na.rm=TRUE)
+sum(t3_3$t28==3,na.rm=TRUE)
+sum(t3_4$t28==3,na.rm=TRUE)
+sum(t3_5$t28==3,na.rm=TRUE)
+sum(t3_6$t28==3,na.rm=TRUE)
+sum(t3_7$t28==3,na.rm=TRUE)
+sum(t3_8$t28==3,na.rm=TRUE)
+
+#anya vgzettsge - szakmunkskpz
+sum(t3_1$t28==4,na.rm=TRUE)
+sum(t3_2$t28==4,na.rm=TRUE)
+sum(t3_3$t28==4,na.rm=TRUE)
+sum(t3_4$t28==4,na.rm=TRUE)
+sum(t3_5$t28==4,na.rm=TRUE)
+sum(t3_6$t28==4,na.rm=TRUE)
+sum(t3_7$t28==4,na.rm=TRUE)
+sum(t3_8$t28==4,na.rm=TRUE)
+
+#anya vgzettsge - rettsgi
+sum(t3_1$t28==5,na.rm=TRUE)
+sum(t3_2$t28==5,na.rm=TRUE)
+sum(t3_3$t28==5,na.rm=TRUE)
+sum(t3_4$t28==5,na.rm=TRUE)
+sum(t3_5$t28==5,na.rm=TRUE)
+sum(t3_6$t28==5,na.rm=TRUE)
+sum(t3_7$t28==5,na.rm=TRUE)
+sum(t3_8$t28==5,na.rm=TRUE)
+
+#anya vgzettsge - rettsgi
+sum(t3_1$t28==6,na.rm=TRUE)
+sum(t3_2$t28==6,na.rm=TRUE)
+sum(t3_3$t28==6,na.rm=TRUE)
+sum(t3_4$t28==6,na.rm=TRUE)
+sum(t3_5$t28==6,na.rm=TRUE)
+sum(t3_6$t28==6,na.rm=TRUE)
+sum(t3_7$t28==6,na.rm=TRUE)
+sum(t3_8$t28==6,na.rm=TRUE)
+
+#anya vgzettsge - egyetem
+sum(t3_1$t28==7,na.rm=TRUE)
+sum(t3_2$t28==7,na.rm=TRUE)
+sum(t3_3$t28==7,na.rm=TRUE)
+sum(t3_4$t28==7,na.rm=TRUE)
+sum(t3_5$t28==7,na.rm=TRUE)
+sum(t3_6$t28==7,na.rm=TRUE)
+sum(t3_7$t28==7,na.rm=TRUE)
+sum(t3_8$t28==7,na.rm=TRUE)
+
+#apa vgzettsge - kevesebb, mint 8 ltalnos
+sum(t3_1$t29==1,na.rm=TRUE)
+sum(t3_2$t29==1,na.rm=TRUE)
+sum(t3_3$t29==1,na.rm=TRUE)
+sum(t3_4$t29==1,na.rm=TRUE)
+sum(t3_5$t29==1,na.rm=TRUE)
+sum(t3_6$t29==1,na.rm=TRUE)
+sum(t3_7$t29==1,na.rm=TRUE)
+sum(t3_8$t29==1,na.rm=TRUE)
+
+#apa vgzettsge - t29==2
+sum(t3_1$t29==2,na.rm=TRUE)
+sum(t3_2$t29==2,na.rm=TRUE)
+sum(t3_3$t29==2,na.rm=TRUE)
+sum(t3_4$t29==2,na.rm=TRUE)
+sum(t3_5$t29==2,na.rm=TRUE)
+sum(t3_6$t29==2,na.rm=TRUE)
+sum(t3_7$t29==2,na.rm=TRUE)
+sum(t3_8$t29==2,na.rm=TRUE)
+
+#apa vgzettsge - t29==1
+sum(t3_1$t29==1,na.rm=TRUE)
+sum(t3_2$t29==1,na.rm=TRUE)
+sum(t3_3$t29==1,na.rm=TRUE)
+sum(t3_4$t29==1,na.rm=TRUE)
+sum(t3_5$t29==1,na.rm=TRUE)
+sum(t3_6$t29==1,na.rm=TRUE)
+sum(t3_7$t29==1,na.rm=TRUE)
+sum(t3_8$t29==1,na.rm=TRUE)
+
+
+#apa vgzettsge - t29==2
+sum(t3_1$t29==2,na.rm=TRUE)
+sum(t3_2$t29==2,na.rm=TRUE)
+sum(t3_3$t29==2,na.rm=TRUE)
+sum(t3_4$t29==2,na.rm=TRUE)
+sum(t3_5$t29==2,na.rm=TRUE)
+sum(t3_6$t29==2,na.rm=TRUE)
+sum(t3_7$t29==2,na.rm=TRUE)
+sum(t3_8$t29==2,na.rm=TRUE)
+
+#apa vgzettsge - t29==3
+sum(t3_1$t29==3,na.rm=TRUE)
+sum(t3_2$t29==3,na.rm=TRUE)
+sum(t3_3$t29==3,na.rm=TRUE)
+sum(t3_4$t29==3,na.rm=TRUE)
+sum(t3_5$t29==3,na.rm=TRUE)
+sum(t3_6$t29==3,na.rm=TRUE)
+sum(t3_7$t29==3,na.rm=TRUE)
+sum(t3_8$t29==3,na.rm=TRUE)
+
+#apa vgzettsge - t29==4
+sum(t3_1$t29==4,na.rm=TRUE)
+sum(t3_2$t29==4,na.rm=TRUE)
+sum(t3_3$t29==4,na.rm=TRUE)
+sum(t3_4$t29==4,na.rm=TRUE)
+sum(t3_5$t29==4,na.rm=TRUE)
+sum(t3_6$t29==4,na.rm=TRUE)
+sum(t3_7$t29==4,na.rm=TRUE)
+sum(t3_8$t29==4,na.rm=TRUE)
+
+#apa vgzettsge - t29==5
+sum(t3_1$t29==5,na.rm=TRUE)
+sum(t3_2$t29==5,na.rm=TRUE)
+sum(t3_3$t29==5,na.rm=TRUE)
+sum(t3_4$t29==5,na.rm=TRUE)
+sum(t3_5$t29==5,na.rm=TRUE)
+sum(t3_6$t29==5,na.rm=TRUE)
+sum(t3_7$t29==5,na.rm=TRUE)
+sum(t3_8$t29==5,na.rm=TRUE)
+
+#apa vgzettsge - t29==6
+sum(t3_1$t29==6,na.rm=TRUE)
+sum(t3_2$t29==6,na.rm=TRUE)
+sum(t3_3$t29==6,na.rm=TRUE)
+sum(t3_4$t29==6,na.rm=TRUE)
+sum(t3_5$t29==6,na.rm=TRUE)
+sum(t3_6$t29==6,na.rm=TRUE)
+sum(t3_7$t29==6,na.rm=TRUE)
+sum(t3_8$t29==6,na.rm=TRUE)
+
+#apa vgzettsge - t29==7
+sum(t3_1$t29==7,na.rm=TRUE)
+sum(t3_2$t29==7,na.rm=TRUE)
+sum(t3_3$t29==7,na.rm=TRUE)
+sum(t3_4$t29==7,na.rm=TRUE)
+sum(t3_5$t29==7,na.rm=TRUE)
+sum(t3_6$t29==7,na.rm=TRUE)
+sum(t3_7$t29==7,na.rm=TRUE)
+sum(t3_8$t29==7,na.rm=TRUE)
+
+#testverek szam - t23_b==1
+sum(t3_1$t23_b==1,na.rm=TRUE)
+sum(t3_2$t23_b==1,na.rm=TRUE)
+sum(t3_3$t23_b==1,na.rm=TRUE)
+sum(t3_4$t23_b==1,na.rm=TRUE)
+sum(t3_5$t23_b==1,na.rm=TRUE)
+sum(t3_6$t23_b==1,na.rm=TRUE)
+sum(t3_7$t23_b==1,na.rm=TRUE)
+sum(t3_8$t23_b==1,na.rm=TRUE)
+
+
+#testverek szam - t23_b==2
+sum(t3_1$t23_b==2,na.rm=TRUE)
+sum(t3_2$t23_b==2,na.rm=TRUE)
+sum(t3_3$t23_b==2,na.rm=TRUE)
+sum(t3_4$t23_b==2,na.rm=TRUE)
+sum(t3_5$t23_b==2,na.rm=TRUE)
+sum(t3_6$t23_b==2,na.rm=TRUE)
+sum(t3_7$t23_b==2,na.rm=TRUE)
+sum(t3_8$t23_b==2,na.rm=TRUE)
+
+#testverek szam - t23_b==3
+sum(t3_1$t23_b==3,na.rm=TRUE)
+sum(t3_2$t23_b==3,na.rm=TRUE)
+sum(t3_3$t23_b==3,na.rm=TRUE)
+sum(t3_4$t23_b==3,na.rm=TRUE)
+sum(t3_5$t23_b==3,na.rm=TRUE)
+sum(t3_6$t23_b==3,na.rm=TRUE)
+sum(t3_7$t23_b==3,na.rm=TRUE)
+sum(t3_8$t23_b==3,na.rm=TRUE)
+
+#testverek szam - t23_b==4
+sum(t3_1$t23_b==4,na.rm=TRUE)
+sum(t3_2$t23_b==4,na.rm=TRUE)
+sum(t3_3$t23_b==4,na.rm=TRUE)
+sum(t3_4$t23_b==4,na.rm=TRUE)
+sum(t3_5$t23_b==4,na.rm=TRUE)
+sum(t3_6$t23_b==4,na.rm=TRUE)
+sum(t3_7$t23_b==4,na.rm=TRUE)
+sum(t3_8$t23_b==4,na.rm=TRUE)
+
+#testverek szam - t23_b==5
+sum(t3_1$t23_b==5,na.rm=TRUE)
+sum(t3_2$t23_b==5,na.rm=TRUE)
+sum(t3_3$t23_b==5,na.rm=TRUE)
+sum(t3_4$t23_b==5,na.rm=TRUE)
+sum(t3_5$t23_b==5,na.rm=TRUE)
+sum(t3_6$t23_b==5,na.rm=TRUE)
+sum(t3_7$t23_b==5,na.rm=TRUE)
+sum(t3_8$t23_b==5,na.rm=TRUE)
+
+#testverek szam - t23_b==6
+sum(t3_1$t23_b==6,na.rm=TRUE)
+sum(t3_2$t23_b==6,na.rm=TRUE)
+sum(t3_3$t23_b==6,na.rm=TRUE)
+sum(t3_4$t23_b==6,na.rm=TRUE)
+sum(t3_5$t23_b==6,na.rm=TRUE)
+sum(t3_6$t23_b==6,na.rm=TRUE)
+sum(t3_7$t23_b==6,na.rm=TRUE)
+sum(t3_8$t23_b==6,na.rm=TRUE)
+
+#testverek szam - t23_b==0
+sum(t3_1$t23_b==0,na.rm=TRUE)
+sum(t3_2$t23_b==0,na.rm=TRUE)
+sum(t3_3$t23_b==0,na.rm=TRUE)
+sum(t3_4$t23_b==0,na.rm=TRUE)
+sum(t3_5$t23_b==0,na.rm=TRUE)
+sum(t3_6$t23_b==0,na.rm=TRUE)
+sum(t3_7$t23_b==0,na.rm=TRUE)
+sum(t3_8$t23_b==0,na.rm=TRUE)
+
+#telepulestipus - teltip7_tan==1
+sum(t3_1$teltip7_tan==1,na.rm=TRUE)
+sum(t3_2$teltip7_tan==1,na.rm=TRUE)
+sum(t3_3$teltip7_tan==1,na.rm=TRUE)
+sum(t3_4$teltip7_tan==1,na.rm=TRUE)
+sum(t3_5$teltip7_tan==1,na.rm=TRUE)
+sum(t3_6$teltip7_tan==1,na.rm=TRUE)
+sum(t3_7$teltip7_tan==1,na.rm=TRUE)
+sum(t3_8$teltip7_tan==1,na.rm=TRUE)
+
+
+#telepulestipus - teltip7_tan==2
+sum(t3_1$teltip7_tan==2,na.rm=TRUE)
+sum(t3_2$teltip7_tan==2,na.rm=TRUE)
+sum(t3_3$teltip7_tan==2,na.rm=TRUE)
+sum(t3_4$teltip7_tan==2,na.rm=TRUE)
+sum(t3_5$teltip7_tan==2,na.rm=TRUE)
+sum(t3_6$teltip7_tan==2,na.rm=TRUE)
+sum(t3_7$teltip7_tan==2,na.rm=TRUE)
+sum(t3_8$teltip7_tan==2,na.rm=TRUE)
+
+#telepulestipus - teltip7_tan==3
+sum(t3_1$teltip7_tan==3,na.rm=TRUE)
+sum(t3_2$teltip7_tan==3,na.rm=TRUE)
+sum(t3_3$teltip7_tan==3,na.rm=TRUE)
+sum(t3_4$teltip7_tan==3,na.rm=TRUE)
+sum(t3_5$teltip7_tan==3,na.rm=TRUE)
+sum(t3_6$teltip7_tan==3,na.rm=TRUE)
+sum(t3_7$teltip7_tan==3,na.rm=TRUE)
+sum(t3_8$teltip7_tan==3,na.rm=TRUE)
+
+#telepulestipus - teltip7_tan==4
+sum(t3_1$teltip7_tan==4,na.rm=TRUE)
+sum(t3_2$teltip7_tan==4,na.rm=TRUE)
+sum(t3_3$teltip7_tan==4,na.rm=TRUE)
+sum(t3_4$teltip7_tan==4,na.rm=TRUE)
+sum(t3_5$teltip7_tan==4,na.rm=TRUE)
+sum(t3_6$teltip7_tan==4,na.rm=TRUE)
+sum(t3_7$teltip7_tan==4,na.rm=TRUE)
+sum(t3_8$teltip7_tan==4,na.rm=TRUE)
+
+#telepulestipus - teltip7_tan==5
+sum(t3_1$teltip7_tan==5,na.rm=TRUE)
+sum(t3_2$teltip7_tan==5,na.rm=TRUE)
+sum(t3_3$teltip7_tan==5,na.rm=TRUE)
+sum(t3_4$teltip7_tan==5,na.rm=TRUE)
+sum(t3_5$teltip7_tan==5,na.rm=TRUE)
+sum(t3_6$teltip7_tan==5,na.rm=TRUE)
+sum(t3_7$teltip7_tan==5,na.rm=TRUE)
+sum(t3_8$teltip7_tan==5,na.rm=TRUE)
+
+#telepulestipus - teltip7_tan==6
+sum(t3_1$teltip7_tan==6,na.rm=TRUE)
+sum(t3_2$teltip7_tan==6,na.rm=TRUE)
+sum(t3_3$teltip7_tan==6,na.rm=TRUE)
+sum(t3_4$teltip7_tan==6,na.rm=TRUE)
+sum(t3_5$teltip7_tan==6,na.rm=TRUE)
+sum(t3_6$teltip7_tan==6,na.rm=TRUE)
+sum(t3_7$teltip7_tan==6,na.rm=TRUE)
+sum(t3_8$teltip7_tan==6,na.rm=TRUE)
+
+#telepulestipus - teltip7_tan==7
+sum(t3_1$teltip7_tan==7,na.rm=TRUE)
+sum(t3_2$teltip7_tan==7,na.rm=TRUE)
+sum(t3_3$teltip7_tan==7,na.rm=TRUE)
+sum(t3_4$teltip7_tan==7,na.rm=TRUE)
+sum(t3_5$teltip7_tan==7,na.rm=TRUE)
+sum(t3_6$teltip7_tan==7,na.rm=TRUE)
+sum(t3_7$teltip7_tan==7,na.rm=TRUE)
+sum(t3_8$teltip7_tan==7,na.rm=TRUE)
+
+
+library(dplyr)
+a1b1c1<-tanuloi6_2018 %>% 
+  filter(t3<5,t28<=2,teltip7_tan==1)
+
+a2b1c1<-tanuloi6_2018 %>%
+  filter(t3==5,t28<=2,teltip7_tan==1)
+
+a3b1c1<-tanuloi6_2018 %>%
+  filter(t3==6,t28<=2,teltip7_tan==1)
+
+a4b1c1<-tanuloi6_2018 %>%
+  filter(t3==7,t28<=2,teltip7_tan==1)
+
+a5b1c1<-tanuloi6_2018 %>%
+  filter(t3==8,t28<=2,teltip7_tan==1)
+
+a1b2c1<-tanuloi6_2018 %>%
+  filter(t3<5,t28>2,t28<=5,teltip7_tan==1)
+
+a2b2c1<-tanuloi6_2018 %>%
+  filter(t3==5,t28>2,t28<=5,teltip7_tan==1)
+
+a3b2c1<-tanuloi6_2018 %>%
+  filter(t3==6,t28>2,t28<=5,teltip7_tan==1)
+
+a4b2c1<-tanuloi6_2018 %>%
+  filter(t3==7,t28>2,t28<=5,teltip7_tan==1)
+
+a5b2c1<-tanuloi6_2018 %>%
+  filter(t3==8,t28>2,t28<=5,teltip7_tan==1)
+
+a1b3c1<-tanuloi6_2018 %>%
+  filter(t3<5,t28>5,teltip7_tan==1)
+
+a2b3c1<-tanuloi6_2018 %>%
+  filter(t3==5,t28>5,teltip7_tan==1)
+
+a3b3c1<-tanuloi6_2018 %>%
+  filter(t3==6,t28>5,teltip7_tan==1)
+
+a4b3c1<-tanuloi6_2018 %>%
+  filter(t3==7,t28>5,teltip7_tan==1)
+
+a5b3c1<-tanuloi6_2018 %>%
+  filter(t3==8,t28>5,teltip7_tan==1)
+
+a1b1c2<-tanuloi6_2018 %>%
+  filter(t3<=5,t28<=2,teltip7_tan>=2,teltip7_tan<=3)
+
+a2b1c2<-tanuloi6_2018 %>%
+  filter(t3==5,t28<=2,teltip7_tan>=2,teltip7_tan<=3)
+
+a3b1c2<-tanuloi6_2018 %>%
+  filter(t3==6,t28<=2,teltip7_tan>=2,teltip7_tan<=3)
+
+a4b1c2<-tanuloi6_2018 %>%
+  filter(t3==7,t28<=2,teltip7_tan>=2,teltip7_tan<=3)
+
+a5b1c2<-tanuloi6_2018 %>%
+  filter(t3==8,t28<=2,teltip7_tan>=2,teltip7_tan<=3)
+
+a1b1c3<-tanuloi6_2018 %>%
+  filter(t3<=5,t28<=2,teltip7_tan>3)
+
+a2b1c3<-tanuloi6_2018 %>%
+  filter(t3==5,t28<=2,teltip7_tan>3)
+
+a3b1c3<-tanuloi6_2018 %>%
+  filter(t3==6,t28<=2,teltip7_tan>3)
+
+a3b1c3<-tanuloi6_2018 %>%
+  filter(t3==6,t28<=2,teltip7_tan>3)
+
+a4b1c3<-tanuloi6_2018 %>%
+  filter(t3==7,t28<=2,teltip7_tan>3)
+
+a5b1c3<-tanuloi6_2018 %>%
+  filter(t3==8,t28<=2,teltip7_tan>3)
+
+a1b2c2<-tanuloi6_2018 %>%
+  filter(t3<=5,t28>2,t28<=5,tteltip7_tan>=2,teltip7_tan<=3)
+
+a1b2c3<-tanuloi6_2018 %>%
+  filter(t3<=5,t28>2,t28<=5,teltip7_tan>3)
+
+a2b2c2<-tanuloi6_2018 %>%
+  filter(t3==5,t28>2,t28<=5,teltip7_tan>=2,teltip7_tan<=3)
+
+a2b2c3<-tanuloi6_2018 %>%
+  filter(t3==5,t28>2,t28<=5,teltip7_tan>3)
+
+a3b2c2<-tanuloi6_2018 %>%
+  filter(t3==6,t28>2,t28<=5,teltip7_tan>=2,teltip7_tan<=3)
+
+a3b2c3<-tanuloi6_2018 %>%
+  filter(t3==6,t28>2,t28<=5,teltip7_tan>3)
+
+a4b2c2<-tanuloi6_2018 %>%
+  filter(t3==7,t28>2,t28<=5,teltip7_tan>=2,teltip7_tan<=3)
+
+a4b2c3<-tanuloi6_2018 %>%
+  filter(t3==7,t28>2,t28<=5,teltip7_tan>3)
+
+a5b2c2<-tanuloi6_2018 %>%
+  filter(t3==8,t28>2,t28<=5,teltip7_tan>=2,teltip7_tan<=3)
+
+a5b2c3<-tanuloi6_2018 %>%
+  filter(t3==8,t28>2,t28<=5,teltip7_tan>3)
+
+a1b3c2<-tanuloi6_2018 %>%
+  filter(t3<=5,t28>5,teltip7_tan>=2,teltip7_tan<=3)
+
+a1b3c3<-tanuloi6_2018 %>%
+  filter(t3<=5,t28>5,teltip7_tan>3)
+
+a2b3c2<-tanuloi6_2018 %>%
+  filter(t3==5,t28>5,teltip7_tan>=2,teltip7_tan<=3)
+
+a2b3c3<-tanuloi6_2018 %>%
+  filter(t3==5,t28>5,teltip7_tan>3)
+
+a3b3c2<-tanuloi6_2018 %>%
+  filter(t3==6,t28>5,teltip7_tan>=2,teltip7_tan<=3)
+
+a3b3c3<-tanuloi6_2018 %>%
+  filter(t3==6,t28>5,teltip7_tan>3)
+
+a4b3c2<-tanuloi6_2018 %>%
+  filter(t3==7,t28>5,teltip7_tan>=2,teltip7_tan<=3)
+
+a4b3c3<-tanuloi6_2018 %>%
+  filter(t3==7,t28>5,teltip7_tan>3)
+
+a5b3c2<-tanuloi6_2018 %>%
+  filter(t3==8,t28>5,teltip7_tan>=2,teltip7_tan<=3)
+
+a5b3c3<-tanuloi6_2018 %>%
+  filter(t3==8,t28>5,teltip7_tan>3)
+
+
+
+#átlagos táblázathoz segédtáblák legenerálása, mergelés elõtt
+#a1<-tanuloi6_2018[tanuloi6_2018$t3<5,]
+#a1$oszlop<-"kevesebb, mint két év"
+#anuloi6_2018<-merge(x=tanuloi6_2018,y=a1,by="t3",all.x=TRUE)
+
+
+str(tanuloi6_2018$t3)
+tanuloi6_2018$t3<-as.factor(tanuloi6_2018$t3)
+tanuloi6_2018$t4<-as.numeric(tanuloi6_2018$t4)
+tanuloi6_2018$t17<-as.factor(tanuloi6_2018$t17)
+tanuloi6_2018$t23_b<-as.factor(tanuloi6_2018$t23_b)
+tanuloi6_2018$t23_b<-as.numeric(tanuloi6_2018$t23_b)
+tanuloi6_2018$t28<-as.factor(tanuloi6_2018$t28)
+tanuloi6_2018$t29<-as.factor(tanuloi6_2018$t29)
+tanuloi6_2018$t39<-as.factor(tanuloi6_2018$t39)
+tanuloi6_2018$t36<-as.factor(tanuloi6_2018$t36)
+tanuloi6_2018$teltip7_tan<-as.factor(tanuloi6_2018$teltip7_tan)
+tanuloi6_2018$t48<-as.factor(tanuloi6_2018$t48)
+tanuloi6_2018$t50<-as.factor(tanuloi6_2018$t50)
+tanuloi6_2018$mkod_tan<-as.factor(tanuloi6_2018$mkod_tan)
+tanuloi6_2018$sex<-as.factor(tanuloi6_2018$sex)
+tanuloi6_2018$t41<-as.factor(tanuloi6_2018$t41)
+tanuloi6_2018$t30a<-as.factor(tanuloi6_2018$t30a)
+tanuloi6_2018$t30b<-as.factor(tanuloi6_2018$t30b)
+tanuloi6_2018$t21a<-as.factor(tanuloi6_2018$t21a)
+tanuloi6_2018$t21b<-as.factor(tanuloi6_2018$t21b)
+tanuloi6_2018$t21c<-as.factor(tanuloi6_2018$t21c)
+tanuloi6_2018$t21d<-as.factor(tanuloi6_2018$t21d)
+tanuloi6_2018$t56<-as.factor(tanuloi6_2018$t56)
+
+m<-lm(o_zpsc~t3_n+csh_index+teltip7_tan+t23_b+t4+sex,data=tanuloi6_2018)
+summary(m)
+
+
+
+tanuloi6_2006$t50<-as.character(tanuloi6_2006$t50)
+m2006<-lm(m_zpsc~t50,data=tanuloi6_2006)
+summary(m2006)
+
+
+atlag1<-tanuloi6_2018 %>%
+  filter(t4=="11")
+
+
+CrossTable()
+library(dplyr)
+cross
+
+install.packages("psych")
+library(psych)
+
+library(tidyr)
+library(ggplot2)
+
+seged<-tanuloi6_2018%>%drop_na(t28)
+  ggplot(data = seged, aes(y = m_zpsc, fill = t28,na.rm=TRUE)) +
+      geom_boxplot()+labs(y="matek pontszám",x="anya/nev.anya isk.",title="Matek pontszám anya/nevelõanya isk. szerint",fill="anya isk")
+
+seged<-tanuloi6_2018%>%drop_na(t29)
+  ggplot(data=seged,aes(y=m_zpsc,fill=t29,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="matek pontszm", x="apa/nevelapa isk",fill="apa isk.",title="Matek pontszám apa/nevelõapa végzettsége szerint")
+
+seged<-tanuloi6_2018%>%drop_na(t3)
+  ggplot(data=seged,aes(y=m_zpsc,fill=t3,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="matek pontszám", x="óvodba járás idõtartama évben",title="Matek pontszám óvodába járás szerint",fill="óvodba járás",colour=c("nem járt","kevesebb, mint egy év","egy év","egy és két év között","két év","három év","négy év","öt év"))
+
+seged<-tanuloi6_2018%>%drop_na(t3)
+  ggplot(data=seged,aes(y=o_zpsc,fill=t3,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="Szövegértés pontszám", x="óvodába járás idõtartama",fill="óvodába járás",title="Szövegértés pontszám óvodába járás szerint")
+
+  
+tanuloi6_2018$t3<-as.factor(tanuloi6_2018$t3)
+seged<-tanuloi6_2018%>%drop_na(t23_b)
+#tanuloi6_2018$t23_b<-as.factor(tanuloi6_2018$t23_b)
+  ggplot(data=seged,aes(y=m_zpsc,fill=t23_b,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="matek pontszám", x="gyerekek száma",fill="gyerekek száma",title="Matek pontszám gyerekek száma szerint")
+
+
+seged<-tanuloi6_2018%>%drop_na(t17)
+  ggplot(data=seged,aes(y=m_zpsc,fill=t17,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="matek pontszám", x="elérni kívánt végzettség",fill="elérni kívánt végzettség",title="Matek pontszám elérni kívánt végzettség szerint")
+
+
+seged<-tanuloi6_2018%>%drop_na(t39)
+  ggplot(data=seged,aes(y=m_zpsc,fill=t39,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="matek pontszám", x="tanuló családja más családokhoz képest mennyire él jól",fill="anyagi helyzet",title="Matek pontszám anyagi helyzet szerint")
+    
+
+seged<-tanuloi6_2018%>%drop_na(t36)
+  ggplot(data=seged,aes(y=m_zpsc,fill=t36,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="matek pontszám", x="Tanuló családjában a könyvek száma",fill="könyvek száma",title="Matek pontszám könyvek száma szerint")
+
+seged<-tanuloi6_2018%>%drop_na(teltip7_tan)
+  ggplot(data=seged,aes(y=m_zpsc,fill=teltip7_tan,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="matek pontszám", x="Lakhely mérete",fill="településtípus",title="Tanuló lakhelyének településtípusa szerint")
+
+df1<-tanuloi6_2018
+library(dplyr)
+df1<-df1%>%mutate(t28=recode(t28,
+                             "1"=runif(1,2,7),
+                             "2"=runif(1,7,9),
+                             "3"=runif(1,9,11),
+                             "4"=runif(1,11,13),
+                             "5"=runif(1,11,13),
+                             "6"=runif(1,14,16),
+                             "7"=runif(1,16,19)))
+seged<-df1%>%drop_na(t3)
+  ggplot(data=seged,aes(y=t28,fill=t3,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="Anya/nevelõanya végzettsége", x="óvodába járás idõtartama",fill="óvodába járás",title="óvodába járás anya/nevelõanya végzettsége szerint")
+
+df<-tanuloi6_2018
+df2006<-tanuloi6_2006
+df<-df%>%mutate(t3=recode(t3,
+                          "1"=0,
+                          "2"=0.5,
+                          "3"=1,
+                          "4"=1.5,
+                          "5"=2,
+                          "6"=3,
+                          "7"=4,
+                          "8"=5	))
+
+df2006<-df2006%>%mutate(t3=recode(t3,
+                                  "1"=0,
+                                  "2"=0.5,
+                                  "3"=1,
+                                  "4"=1.5,
+                                  "5"=2,
+                                  "6"=3,
+                                  "7"=4,
+                                  "8"=5	))
+df<-df%>%mutate(t28=recode(t28,
+                           "1"=5,
+                           "2"=8,
+                           "3"=10,
+                           "4"=12,
+                           "5"=12,
+                           "6"=15,
+                           "7"=18))
+
+df<-df%>%mutate(t29=recode(t29,
+                           "1"=5,
+                           "2"=8,
+                           "3"=10,
+                           "4"=12,
+                           "5"=12,
+                           "6"=15,
+                           "7"=18))
+df<-df%>%mutate(t36=recode(t36,
+                           "1"=25,
+                           "2"=50,
+                           "3"=125,
+                           "4"=250,
+                           "5"=450,
+                           "6"=900,
+                           "7"=1800
+))
+
+library(corrplot)
+#fejlec<-c("matek átlag","szövegértés átlag","osztály létszáma","iskolai matek átlag","iskolai szövegértés átlag","telefonok db","számítógép db","autó db","fürdõszoba db")
+#y<-list(matek_pontszám=df$m_zpsc,szövegértés_pontszám=df$o_zpsc,óvodába_járás=df$t3,osztály_létszám=df$letszam_oszt_6,isk_mat_mean=df$mean_isk_mat_6,isk_olv_mean=df$mean_isk_olv_6,csh_index=df$csh_index,anya_nev_anya_isk=df$t28)
+y<-list(matek_pontszám=df$m_zpsc,szöveg_pontszám=df$o_zpsc,óvodába_járás=df$t3,isk_kezdési_kor=df$t4,osztály_létszám=df$letszam_oszt_6,isk_mat_mean=df$mean_isk_mat_6,isk_olv_mean=df$mean_isk_olv_6,csh_index=df$csh_index,anya_isk=df$t28,apa_isk=df$t29,mobil_db=df$t35a,számítógép_db=df$t35b,autók_db=df$t35c,lakószobák_db=df$t34,könyvek_db=df$t36)
+y<-as.data.frame(y)
+#KorrelMatrix<-as.data.frame(df$m_zpsc,df$o_zpsc,df$letszam_oszt_6,df$mean_isk_mat_6,df$mean_isk_olv_6,df$t35a,df$t35b,df$t35c,df$t35d)
+km<-cor(na.omit(y))
+corrplot(km,method="color",tl.cex=0.8)
+corrplot(km,method="number",number.cex=0.7,tl.cex=0.8)
+
+colors <- scales::alpha(colorRampPalette(c("red", "blue"))(10), alpha = 0.5)
+corrplot(km,method="number",number.cex=0.7,col=colors)
+m1<-lm(m_zpsc~t3,data=df)
+summary(m1)
+
+m1_sz<-lm(o_zpsc~t3,data=df)
+summary(m1_sz)
+
+m2<-lm(m_zpsc~letszam_oszt_6+t3,data=df)
+summary(m2)
+
+m2_sz<-lm(o_zpsc~t3+letszam_oszt_6,data=df)
+summary(m2_sz)
+
+m3<-lm(m_zpsc~t3+letszam_oszt_6+t17,data=df)
+summary(m3)
+
+m3_sz<-lm(o_zpsc~t3+letszam_oszt_6+t17,data=df)
+summary(m3_sz)
+
+m4<-lm(m_zpsc~t3+letszam_oszt_6+t17+t23_b,data=df)
+summary(m4)
+
+m4_sz<-lm(o_zpsc~t3+letszam_oszt_6+t17+t23_b,data=df)
+summary(m4_sz)
+
+m5<-lm(m_zpsc~t3+letszam_oszt_6+t23_b,data=df)
+summary(m5)
+
+m5_sz<-lm(o_zpsc~t3+letszam_oszt_6+t23_b,data=df)
+summary(m5_sz)
+
+m6<-lm(m_zpsc~t3+letszam_oszt_6+t28,data=df)
+summary(m6)
+
+m6_sz<-lm(o_zpsc~t3+letszam_oszt_6+t28,data=df)
+summary(m6_sz)
+
+m7<-lm(m_zpsc~t3+letszam_oszt_6+t29,data=df)
+summary(m7)
+
+m7_sz<-lm(o_zpsc~t3+letszam_oszt_6+t29,data=df)
+summary(m7_sz)
+
+m8<-lm(m_zpsc~t3+letszam_oszt_6+t39,data=df)
+summary(m8)
+
+m8_sz<-lm(o_zpsc~t3+letszam_oszt_6+t39,data=df)
+summary(m8_sz)
+
+m9<-lm(m_zpsc~t3+letszam_oszt_6+t39+t17,data=df)
+summary(m9)
+
+m9_sz<-lm(o_zpsc~t3+letszam_oszt_6+t39+t17,data=df)
+summary(m9_sz)
+
+m10<-lm(m_zpsc~t3+letszam_oszt_6+t36+t17,data=df)
+summary(m10)
+
+m10_sz<-lm(o_zpsc~t3+letszam_oszt_6+t36+t17,data=df)
+summary(m10_sz)
+
+m11<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17,data=df)
+summary(m11)
+
+m11_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17,data=df)
+summary(m11_sz)
+
+kapcs<-as.data.frame(table(df$t28,df$t17))
+kapcs
+
+library(rcompanion)
+proba<-CrossTable(df$t28,df$t17)
+proba
+
+library(lsr)
+kapcs$Var1<-as.numeric(kapcs$Var1)
+kapcs$Var2<-as.numeric(kapcs$Var2)
+cramersV(kapcs)
+
+
+z<-list(anya_isk=df$t28,celkítûzés=df$t17)
+z<-as.data.frame(z)
+z<-na.omit(z)
+z$anya_isk<-as.character(z$anya_isk)
+z$celkítûzés<-as.character(z$celkítûzés)
+cramersV(z)
+
+m12<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39,data=df)
+summary(m12)
+
+m12_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39,data=df)
+summary(m12_sz)
+
+m13<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36,data=df)
+summary(m13)
+
+m13_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36,data=df)
+summary(m13_sz)
+
+m14<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex,data=df)
+summary(m14)
+
+m14_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex,data=df)
+summary(m14_sz)
+
+m15<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t37,data=df)
+summary(m15)
+
+m15_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t37,data=df)
+summary(m15_sz)
+
+m16<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t38a,data=df)
+summary(m16)
+
+m16_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t38a,data=df)
+summary(m16_sz)
+
+m17<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t38b,data=df)
+summary(m17)
+
+m17_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t38b,data=df)
+summary(m17_sz)
+
+df$t40b<-as.factor(df$t40b)
+m18<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t40b,data=df)
+summary(m18)
+
+m18_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t40b,data=df)
+summary(m18_sz)
+
+df$t41<-as.factor(df$t41)
+m19<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41,data=df)
+summary(m19)
+
+m19_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41,data=df)
+summary(m19_sz)
+
+df$mkod_isk<-as.factor(df$mkod_isk)
+m20<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41,data=df)
+summary(m20)
+
+m20_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41,data=df)
+summary(m20_sz)
+
+df$t1_ev<-as.factor(df$t1_ev)
+m21<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev,data=df)
+summary(m21)
+
+m21_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev,data=df)
+summary(m21_sz)
+
+df$t30a<-as.factor(df$t30a)
+df$t30b<-as.factor(df$t30b)
+m22<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b,data=df)
+summary(m22)
+
+m22_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b,data=df)
+summary(m22_sz)
+
+df$t48<-as.factor(df$t48)
+m23<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48,data=df)
+summary(m23)
+
+m23_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48,data=df)
+summary(m23_sz)
+
+df$t13<-as.factor(df$t13)
+m24<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13,data=df)
+summary(m24)
+
+m24_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13,data=df)
+summary(m24_sz)
+
+df$t21a<-as.factor(df$t21a)
+df$t21b<-as.factor(df$t21b)
+df$t21c<-as.factor(df$t21c)
+df$t21d<-as.factor(df$t21d)
+
+m25<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d,data=df)
+summary(m25)
+
+m25_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d,data=df)
+summary(m25_sz)
+
+library(writexl)
+library(xlsx)
+
+df$t17<-na.omit(df$t17)
+df$t28<-na.omit(df$t28)
+krem<-list(celkitûzés=df$t17,anya_vegzettseg=df$t28)
+krem<-as.data.frame(krem)
+krem<-na.omit(krem)
+krem$celkitûzés<-as.factor(krem$celkitûzés)
+krem$anya_vegzettseg<-as.factor(krem$anya_vegzettseg)
+
+proba<-as.data.frame(proba)
+
+cramersV(krem)
+kereszt<-list(col1=krem$celkitûzés,col2=krem$anya_vegzettseg)
+kereszt<-as.data.frame(kereszt)
+cramersV(kereszt)
+
+library(rio)
+library(openxlsx)
+
+m27<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d+t56+csh_index,data=df)
+summary(m27)
+
+m27_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d+t56+csh_index,data=df)
+summary(m27_sz)
+
+ggplot(data = df, aes(x = letszam_oszt_6, y = m_zpsc, color = t3)) +
+  geom_point() +
+  stat_smooth(method=lm)
+
+df_seged<-df[c("m_zpsc","letszam_oszt_6","t3")]
+df_seged$t3<-as.numeric(df_seged$t3)
+
+df_seged1<-df_seged[df_seged$t3<2,]
+df_seged1$oszlop<-"kevesebb, mint két év"
+
+df_seged2<-df_seged[df_seged$t3==2,]
+df_seged2$oszlop<-"két év"
+
+df_seged3<-df_seged[df_seged$t3==3 | df_seged$t3==4,]
+df_seged3$oszlop<-"három vagy négy év"
+
+df_seged5<-df_seged[df_seged$t3==5,]
+df_seged5$oszlop<-"öt év"
+
+plot_model(m27)
+
+str(m27)
+
+m28<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d+t56+csh_index+t3*csh_index,data=df)
+summary(m28)
+
+m28_sz<-lm(o_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d+t56+csh_index+teltip7_tan*t39,data=df)
+summary(m28_sz)
+
+
+
+
+df[df$t3=="1"]
+
+library(dplyr)
+df$t3<-as.fact
+df<-df%>%mutate(t3=recode(t3,
+                      "1"=0,
+                      "2"=0.5,
+                      "3"=1,
+                      "4"=1.5,
+                      "5"=2,
+                      "6"=3,
+                      "7"=4,
+                      "8"=5))
+
+tanuloi6_2006$t3<-as.character(tanuloi6_2006$t3)
+tanuloi6_2007$t3<-as.character(tanuloi6_2007$t3)
+tanuloi6_2008$t3<-as.character(tanuloi6_2008$t3)
+tanuloi6_2009$t3<-as.character(tanuloi6_2009$t3)
+tanuloi6_2010$t3<-as.character(tanuloi6_2010$t3)
+tanuloi6_2011$t3<-as.character(tanuloi6_2011$t3)
+tanuloi6_2012$t3<-as.character(tanuloi6_2012$t3)
+tanuloi6_2013$t3<-as.character(tanuloi6_2013$t3)
+tanuloi6_2014$t3<-as.character(tanuloi6_2014$t3)
+tanuloi6_2015$t3<-as.character(tanuloi6_2015$t3)
+tanuloi6_2016$t3<-as.character(tanuloi6_2016$t3)
+tanuloi6_2017$t3<-as.character(tanuloi6_2017$t3)
+tanuloi6_2018$t3<-as.character(tanuloi6_2018$t3)
+tanuloi6_2019$t3<-as.character(tanuloi6_2019$t3)
+
+sum((tanuloi6_2006$t3)<6,na.rm=TRUE)/sum((tanuloi6_2006$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2007$t3)<6,na.rm=TRUE)/sum((tanuloi6_2007$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2008$t3)<6,na.rm=TRUE)/sum((tanuloi6_2008$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2009$t3)<6,na.rm=TRUE)/sum((tanuloi6_2009$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2010$t3)<6,na.rm=TRUE)/sum((tanuloi6_2010$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2011$t3)<6,na.rm=TRUE)/sum((tanuloi6_2011$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2012$t3)<6,na.rm=TRUE)/sum((tanuloi6_2012$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2013$t3)<6,na.rm=TRUE)/sum((tanuloi6_2013$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2014$t3)<6,na.rm=TRUE)/sum((tanuloi6_2014$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2015$t3)<6,na.rm=TRUE)/sum((tanuloi6_2015$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2016$t3)<6,na.rm=TRUE)/sum((tanuloi6_2016$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2017$t3)<6,na.rm=TRUE)/sum((tanuloi6_2017$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2018$t3)<6,na.rm=TRUE)/sum((tanuloi6_2018$t3)<=9,na.rm=TRUE)
+sum((tanuloi6_2019$t3)<6,na.rm=TRUE)/sum((tanuloi6_2019$t3)<=9,na.rm=TRUE)
+
+m28<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d+t56+csh_index,data=df)
+summary(m28)
+
+hist(df$t3)
+hist(log(df$t3))
+hist(df$letszam_oszt_6)
+hist(df$teltip7_tan)
+
+df$teltip7_tan<-as.numeric(df$teltip7_tan)
+hist(df$teltip7_tan)
+hist(log(df$teltip7_tan))
+hist(df$csh_index)
+hist(log(df$csh_index))
+
+
+library(dplyr)
+df<-df%>%mutate(t28=recode(t28,
+                           "1"=6,
+                           "2"=8,
+                           "3"=10,
+                           "4"=12,
+                           "5"=12,
+                           "6"=15,
+                           "7"=18))
+
+df<-df%>%mutate(t29=recode(t29,
+                           "1"=6,
+                           "2"=8,
+                           "3"=10,
+                           "4"=12,
+                           "5"=12,
+                           "6"=15,
+                           "7"=18))
+
+df<-df%>%mutate(t36=recode(t36,
+                           "1"=25,
+                           "2"=50,
+                           "3"=100,
+                           "4"=200,
+                           "5"=450,
+                           "6"=800,
+                           "7"=1400))
+
+df<-df%>%mutate(t17=recode(t17,
+                           "1"=8,
+                           "2"=12,
+                           "3"=12,
+                           "4"=13,
+                           "5"=15,
+                           "6"=18,
+                           "7"=20))
+
+df$t4<-as.numeric(df$t4)
+m28<-lm(m_zpsc~t3+I(t4^2)+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d+t56+csh_index+teltip7_tan*t39+t29,data=df)
+summary(m28)
+
+library(dplyr)
+library(ggplot2)
+table(tanuloi6_2019$t4)
+tanuloi6_2018$t4<-as.factor(tanuloi6_2018$t4)
+seged<-tanuloi6_2018%>%drop_na(t4)
+  ggplot(data=seged,aes(y=m_zpsc,fill=t4,na.rm=TRUE))+
+    geom_boxplot()+
+    labs(y="matek pontszm", x="letkor",fill="letkor",title="Tanul pontszma letkor szerint")
+
+z<-list(matek_pontszám=df$m_zpsc,szövegértés_pontszám=df$o_zpsc,ovi_év=df$t3,isk_kezd=df$t4,anya_isk=df$t28,apa_isk=df$t29,cel=df$t17)
+z<-as.data.frame(z)
+cm<-cor(na.omit(z))
+library(corrplot)
+corrplot(cm,method="number")
+str(cm)
+
+
+hist(df$t3)
+hist(df$t4)
+hist(df$t17)
+hist(df$t36)
+hist(log(df$t36))
+hist(df$t28)
+
+multi<-lm(m_zpsc~t3+t4+letszam_oszt_6+t28+t29+t17,data=df)
+summary(multi)
+
+car::vif(multi)
+
+vif()
+install.packages("car")
+library(car)
+
+broom::glance(m28)
+
+
+m29<-lm(m_zpsc~t3+I(t3^3)+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d+t56+csh_index,data=df)
+summary(m29)
+
+library(lmtest)
+AIC(m28,m29)
+
+int1<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+t41+t1_ev+t30a+t30b+t48+t13+t21a+t21b+t21c+t21d+t56+csh_index+t3*teltip7_tan,data=df)
+summary(int1)
+
+int2<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+           t41+t1_ev+t30a+t30b+t48+t13+
+           t21a+t21b+t21c+t21d+t56+csh_index+t3*t17,data=df)
+summary(int2)
+
+
+
+int3<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+           t41+t1_ev+t30a+t30b+t48+t13+
+           t21a+t21b+t21c+t21d+t56+csh_index+t3*t28,data=df)
+summary(int3)
+
+
+
+
+
+int4<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+           t41+t1_ev+t30a+t30b+t48+t13+
+           t21a+t21b+t21c+t21d+t56+csh_index+t3*t39,data=df)
+summary(int4)
+
+int5<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+           t41+t1_ev+t30a+t30b+t48+t13+
+           t21a+t21b+t21c+t21d+t56+csh_index+t3*t36,data=df)
+summary(int5)
+
+
+int6<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+           t41+t1_ev+t30a+t30b+t48+t13+
+           t21a+t21b+t21c+t21d+t56+csh_index+t3*sex,data=df)
+summary(int6)
+
+int7<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+           t41+t1_ev+t30a+t30b+t48+t13+
+           t21a+t21b+t21c+t21d+t56+csh_index+t3*t41,data=df)
+summary(int7)
+
+int8<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+           t41+t1_ev+t30a+t30b+t48+t13+
+           t21a+t21b+t21c+t21d+t56+csh_index+t3,data=df)
+summary(int8)
+
+df$mkod_isk<-as.character(df$mkod_isk)
+
+df<-df%>%mutate(mkod_isk=recode(mkod_isk,
+                                  1="1",
+                                  2="2",
+                                  3="3",
+                                  4="4",
+                                  5="5",
+                                  6="6",
+                                  7="7",
+                                  8="8",
+                                  9="9",
+                                  10="10",
+                                  11="11",
+                                  12="12",
+                                  13="13",
+                                  14="14",
+                                  15="15",
+                                  16="16",
+                                  17="17",
+                                  18="18",
+                                  19="19",
+                                  20="20"))
+
+
+
+int9<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+           t41+t1_ev+t30a+t30b+t48+t13+
+           t21a+t21b+t21c+t21d+t56+csh_index+t3*t1_ev,data=df)
+summary(int9)
+
+int10<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+            t41+t1_ev+t30a+t30b+t48+t13+
+            t21a+t21b+t21c+t21d+t56+csh_index+t3*t30a+t3*t30b,data=df)
+summary(int10)
+
+int11<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+            t41+t1_ev+t30a+t30b+t48+t13+
+            t21a+t21b+t21c+t21d+t56+csh_index+t3*t21a+t3*t21b+t3*t21b+t3*t21c+t3*t21d,data=df)
+summary(int11)
+
+int12<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+            t41+t1_ev+t30a+t30b+t48+t13+
+            t21a+t21b+t21c+t21d+t56+csh_index+t3*t56,data=df)
+summary(int12)
+
+
+int13<-lm(m_zpsc~t3+letszam_oszt_6+teltip7_tan+t17+t28+t39+t36+sex+
+            t41+t1_ev+t30a+t30b+t48+t13+
+            t21a+t21b+t21c+t21d+t56+csh_index+t3*teltip7_tan+t3*t17+t3*t28
+          +t3*t39+t3*t36+t3*sex+t3*t41+t3*t1_ev+t3*t30a
+          +t3*t30b+t3*t48+t3*t21a+t3*t21b+t3*t21c+t3*t21d+t3*t56,data=df)
+summary(int13)
+
+
+
+library(ggdag)
+library(ggplot2)
+library(dplyr)
+library(Rcpp)
+
+dagify(y ~ x) %>% 
+  ggdag()
+
+
+modell1<-lm(m_zpsc~t3,data=tanuloi6_2018)
+summary(modell1)
+
+modell1_sz<-lm(o_zpsc~t3,data=tanuloi6_2018)
+summary(modell1_sz)
+
+modell2<-lm(m_zpsc~t3+t4,data=tanuloi6_2018)
+summary(modell2)
+
+modell2_sz<-lm(o_zpsc~t3+t4,data=tanuloi6_2018)
+summary(modell2_sz)
+
+modell3_1<-lm(m_zpsc~t3+t28,data=tanuloi6_2018)
+summary(modell3_1)
+
+modell3_sz<-lm(o_zpsc~t3+t28,data=tanuloi6_2018)
+summary(modell3_sz)
+
+modell3_2<-lm(o_zpsc~t3+t29,data=tanuloi6_2018)
+summary(modell3_2)
+
+modell3_2sz<-lm(o_zpsc~t3+t29,data=tanuloi6_2018)
+summary(modell3_2sz)
+
+modell4<-lm(m_zpsc~t3+t17,data=tanuloi6_2018)
+summary(modell4)
+modell4_sz<-lm(o_zpsc~t3+t17,data=tanuloi6_2018)
+summary(modell4_sz)
+modell5<-lm(m_zpsc~t3+t48,data=tanuloi6_2018)
+summary(modell5)
+modell5_sz<-lm(o_zpsc~t3+t48,data=tanuloi6_2018)
+summary(modell5_sz)
+tanuloi6_2018$t48<-as.factor(tanuloi6_2018$t48)
+modell5<-lm(m_zpsc~t3+t48,data=tanuloi6_2018)
+summary(modell5)
+
+modell6<-lm(m_zpsc~t3+teltip7_tan,data=tanuloi6_2018)
+summary(modell6)
+modell6_sz<-lm(o_zpsc~t3+teltip7_tan,data=tanuloi6_2018)
+summary(modell6_sz)
+modell7_1<-lm(m_zpsc~t3+t30a,data=tanuloi6_2018)
+summary(modell7_1)
+modell7_1sz<-lm(o_zpsc~t3+t30a,data=tanuloi6_2018)
+summary(modell7_1sz)
+modell7_2<-lm(m_zpsc~t3+t30b,data=tanuloi6_2018)
+summary(modell7_2)
+modell7_2sz<-lm(o_zpsc~t3+t30b,data=tanuloi6_2018)
+summary(modell7_2sz)
+
+modell8_1<-lm(m_zpsc~t3+t21a,data=tanuloi6_2018)
+summary(modell8_1)
+modell8_1sz<-lm(o_zpsc~t3+t21a,data=tanuloi6_2018)
+summary(modell8_1sz)
+modell8_2<-lm(m_zpsc~t3+t21b,data=tanuloi6_2018)
+summary(modell8_2)
+modell8_2sz<-lm(o_zpsc~t3+t21b,data=tanuloi6_2018)
+summary(modell8_2sz)
+modell8_3<-lm(m_zpsc~t3+t21c,data=tanuloi6_2018)
+summary(modell8_3)
+modell8_3sz<-lm(o_zpsc~t3+t21c,data=tanuloi6_2018)
+summary(modell8_3sz)
+modell8_4<-lm(m_zpsc~t3+t21d,data=tanuloi6_2018)
+summary(modell8_4)
+modell8_4sz<-lm(o_zpsc~t3+t21d,data=tanuloi6_2018)
+summary(modell8_4sz)
+modell9<-lm(m_zpsc~t3+t39,data=tanuloi6_2018)
+summary(modell9)
+modell9_sz<-lm(o_zpsc~t3+t39,data=tanuloi6_2018)
+summary(modell9_sz)
+modell10<-lm(m_zpsc~t3+t56,data=tanuloi6_2018)
+summary(modell10)
+modell10_sz<-lm(o_zpsc~t3+t56,data=tanuloi6_2018)
+summary(modell10_sz)
+modell11<-lm(m_zpsc~t3+csh_index,data=tanuloi6_2018)
+summary(modell11)
+modell11_sz<-lm(o_zpsc~t3+csh_index,data=tanuloi6_2018)
+summary(modell11_sz)
+modell12<-lm(m_zpsc~t3+letszam_oszt_6,data=tanuloi6_2018)
+summary(modell12)
+modell12_sz<-lm(o_zpsc~t3+letszam_oszt_6,data=tanuloi6_2018)
+summary(modell12_sz)
+modell13<-lm(m_zpsc~t3+t4+t28+t29,data=tanuloi6_2018)
+summary(modell13)
+modell13_sz<-lm(o_zpsc~t3+t4+t28+t29+teltip7_tan,data=tanuloi6_2018)
+summary(modell13_sz)
+modell14<-lm(m_zpsc~t3+t4+t28+t29+teltip7_tan,data=tanuloi6_2018)
+summary(modell14)
+
+modell16<-lm(m_zpsc~t3+t4+t28+t29+teltip7_tan+t39,data=tanuloi6_2018)
+summary(modell16)
+
+modell16_sz<-lm(o_zpsc~t3+t4+t28+t29+teltip7_tan+t39,data=tanuloi6_2018)
+summary(modell16_sz)
+
+
+tanuloi6_2018$t3_n<-as.factor(tanuloi6_2018$t3)
+
+tanuloi6_2018<-tanuloi6_2018%>%mutate(t3_n=recode(t3_n,
+                                                  "1"=0,
+                                                  "2"=0.5,
+                                                  "3"=1,
+                                                  "4"=1.5,
+                                                  "5"=2,
+                                                  "6"=3,
+                                                  "7"=4,
+                                                  "8"=5	))
+
+
+mod1<-lm(m_zpsc~t3_n,data=tanuloi6_2018)
+summary(mod1)
+df2006$teltip7_tan<-as.factor(df2006$teltip7_tan)
+df2006$t50<-as.factor(df2006$t50)
+df2006$t17<-as.factor(df2006$t17)
+m2006_1<-lm(m_zpsc~t3+teltip7_tan+t23+t4+t50+t17+sex,data=df2006)
+summary(m2006_1)
+
+mod2<-lm(m_zpsc~t3_n+t4,data=tanuloi6_2018)
+summary(mod2)
+
+mod3<-lm(m_zpsc~t3_n+t28,data=tanuloi6_2018)
+summary(mod3)
+
+mod4<-lm(m_zpsc~t3_n+t17,data=tanuloi6_2018)
+summary(mod4)
+
+mod3_2<-lm(m_zpsc~t3_n+t29,data=tanuloi6_2018)
+summary(mod3_2)
+
+mod5<-lm(m_zpsc~t3_n+t48,data=tanuloi6_2018)
+summary(mod5)
+
+mod6<-lm(m_zpsc~t3_n+teltip7_tan,data=tanuloi6_2018)
+summary(mod6)
+
+mod7<-lm(m_zpsc~t3_n+t30a,data=tanuloi6_2018)
+summary(mod7)
+
+mod8<-lm(m_zpsc~t3_n+t21a,data=tanuloi6_2018)
+summary(mod8)
+
+mod81<-lm(m_zpsc~t3_n+t21a,data=tanuloi6_2018)
+summary(mod81)
+
+mod82<-lm(m_zpsc~t3_n+t21b,data=tanuloi6_2018)
+summary(mod82)
+
+mod83<-lm(m_zpsc~t3_n+t21c,data=tanuloi6_2018)
+summary(mod83)
+
+mod84<-lm(m_zpsc~t3_n+t21d,data=tanuloi6_2018)
+summary(mod84)
+
+mod9<-lm(m_zpsc~t3_n+t39,data=tanuloi6_2018)
+summary(mod9)
+
+mod10<-lm(m_zpsc~t3_n+t56,data=tanuloi6_2018)
+summary(mod10)
+
+mod11<-lm(m_zpsc~t3_n+csh_index,data=tanuloi6_2018)
+summary(mod11)
+
+mod12<-lm(m_zpsc~t3_n+letszam_oszt_6,data=tanuloi6_2018)
+summary(mod12)
+
+mod13<-lm(m_zpsc~t3_n+t4+t28+t29,data=tanuloi6_2018)
+summary(mod13)
+
+mod14<-lm(m_zpsc~t3_n+t4+t28+t29+teltip7_tan,data=tanuloi6_2018)
+summary(mod14)
+
+mode2<-lm(o_zpsc~t3_n+t4,data=tanuloi6_2018)
+summary(mode2)
+
+mod15<-lm(m_zpsc~t3_n+t4+t28+t29+teltip7_tan+t39,data=tanuloi6_2018)
+summary(mod15)
+
+mode1<-lm(o_zpsc~t3_n,data=tanuloi6_2018)
+summary(mode1)
+
+mode2<-lm(o_zpsc~t3_n+t4,data=tanuloi6_2018)
+summary(mode2)
+
+mode31<-lm(o_zpsc~t3_n+t28,data=tanuloi6_2018)
+summary(mode31)
+
+mode32<-lm(o_zpsc~t3_n+t29,data=tanuloi6_2018)
+summary(mode32)
+
+mode4<-lm(o_zpsc~t3_n+t17,data=tanuloi6_2018)
+summary(mode4)
+
+mode5<-lm(o_zpsc~t3_n+t48,data=tanuloi6_2018)
+summary(mode5)
+
+mode6<-lm(o_zpsc~t3_n+teltip7_tan,data=tanuloi6_2018)
+summary(mode6)
+
+mode7<-lm(o_zpsc~t3_n+t30a,data=tanuloi6_2018)
+summary(mode7)
+
+mode8<-lm(o_zpsc~t3_n+t30b,data=tanuloi6_2018)
+summary(mode8)
+
+mode9<-lm(o_zpsc~t3_n+t21a,data=tanuloi6_2018)
+summary(mode9)
+
+mode92<-lm(o_zpsc~t3_n+t21b,data=tanuloi6_2018)
+summary(mode92)
+
+mode93<-lm(o_zpsc~t3_n+t21c,data=tanuloi6_2018)
+summary(mode93)
+
+mode94<-lm(o_zpsc~t3_n+t21d,data=tanuloi6_2018)
+summary(mode94)
+
+mode10<-lm(o_zpsc~t3_n+t39,data=tanuloi6_2018)
+summary(mode10)
+
+mode11<-lm(o_zpsc~t3_n+t56,data=tanuloi6_2018)
+summary(mode11)
+
+mode12<-lm(o_zpsc~t3_n+csh_index,data=tanuloi6_2018)
+summary(mode12)
+
+mode13<-lm(o_zpsc~t3_n+letszam_oszt_6,data=tanuloi6_2018)
+summary(mode13)
+
+mode14<-lm(o_zpsc~t3_n+t4+t28+t29+teltip7_tan,data=tanuloi6_2018)
+summary(mode14)
+
+mode15<-lm(o_zpsc~t3_n+t4+t28+t29+teltip7_tan+t39,data=tanuloi6_2018)
+summary(mode15)
+
+
+
+
+hist(kevesovi$t28)
+
+
+mm1<-lm(m_zpsc~t3_n,data=tanuloi6_2018)
+summary(mm1)
+
+mo1<-lm(o_zpsc~t3_n,data=tanuloi6_2018)
+summary(mo1)
+
+mm2<-lm(m_zpsc~t3_n+csh_index,data=tanuloi6_2018)
+summary(mm2)
+
+mo2<-lm(o_zpsc~t3_n+csh_index,data=tanuloi6_2018)
+summary(mo2)
+
+mm3<-lm(m_zpsc~t3_n+csh_index+teltip7_tan,data=tanuloi6_2018)
+summary(mm3)
+
+mo3<-lm(o_zpsc~t3_n+csh_index+teltip7_tan,data=tanuloi6_2018)
+summary(mo3)
+
+mm4<-lm(m_zpsc~t3_n+csh_index+teltip7_tan+t23_b,data=tanuloi6_2018)
+summary(mm4)
+
+mo4<-lm(o_zpsc~t3_n+csh_index+teltip7_tan+t23_b,data=tanuloi6_2018)
+summary(mo4)
+
+mm5<-lm(m_zpsc~t3_n+csh_index+teltip7_tan+t23_b+t4+t17,data=tanuloi6_2018)
+summary(mm5)
+
+mo5<-lm(o_zpsc~t3_n+csh_index+teltip7_tan+t23_b+t4,data=tanuloi6_2018)
+summary(mo5)
+
+
+write.csv(summary(mm1),"mm1.csv")
+
+
+smm1<-data.frame(unclass(summary(mm1)), check.names = FALSE, stringsAsFactors = FALSE)
+
+
